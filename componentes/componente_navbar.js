@@ -6,7 +6,7 @@ Vue.component('componente-navbar',{
     <img src="img/gestion-de-proyectos.png></img>
     </a>
 
-    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" style="list-style:none;">
+    <ul style="list-style: none;" class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0" >
     <li><a href="index.html" class="nav-link px-2 link-dark">Gestión</a></li>
     <li><a href="notas.html" class="nav-link px-2 link-dark">Proyectos</a></li>
     </ul>
