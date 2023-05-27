@@ -30,8 +30,14 @@ Vue.component('componente-gestion-tareas',{
 
     methods:{
         continuarProyecto:function(){
+             if(this.nombreProyecto.length=== 0 || this.descripcionProyecto.lenght===0 || this.responsableProyecto.lenght===0){
+               this.validar =false
+               return 
+             }
 
-        }
+             
+
+        },
 
     },
 
