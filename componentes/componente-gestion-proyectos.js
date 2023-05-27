@@ -36,6 +36,24 @@ Vue.component('componente-gestion-tareas',{
                return 
              }
 
+             if(this.proyectoModificado===null){
+                this.validar =true;
+                this.vacio =false;
+
+               this.listaProyectos.push({
+                nombreProyecto:this.nombreProyecto,
+                responsableProyecto:this.responsableProyecto,
+                descripcionProyecto:this.descripcionProyecto,
+                estado:'En progreso'                
+
+
+               });
+               this.nombreProyecto = '';
+               this.responsableProyecto = '';
+               this.descripcionProyecto = '';
+
+             }
+
 
 
         },
