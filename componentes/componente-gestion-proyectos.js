@@ -25,6 +25,8 @@ Vue.component('componente-gestion-proyectos',{
     
     template:`
 
+  
+
 
 
 
@@ -147,3 +149,6 @@ Vue.component('componente-gestion-proyectos',{
 
 
 });
+
+
+
