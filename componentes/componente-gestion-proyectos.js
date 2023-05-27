@@ -18,6 +18,22 @@ Vue.component('componente-gestion-tareas',{
         }
     },
 
+    
+    template:`
+
+
+
+
+    `,
+
+
+    methods:{
+        continuarProyecto:function()
+
+    }
+
+       
+
 
 
 });
