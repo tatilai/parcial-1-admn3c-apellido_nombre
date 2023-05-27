@@ -52,6 +52,15 @@ Vue.component('componente-gestion-tareas',{
                this.responsableProyecto = '';
                this.descripcionProyecto = '';
 
+             }else{
+                this.listaProyectos[this.proyectoModificado].nombreProyecto = this.nombreProyecto;
+                this.listaProyectos[this.proyectoModificado].responsableProyecto = this.responsableProyecto;
+                this.listaProyectos[this.proyectoModificado].descripcionProyecto = this.descripcionProyecto;
+                this.proyectoModificado = null;
+              
+                this.nombreProyecto = '';
+                this.responsableProyecto = '';
+                this.descripcionProyecto = '';
              }
 
 
