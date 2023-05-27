@@ -27,7 +27,7 @@ Vue.component('componente-navbar', {
           <img src="img/gestion-de-proyectos.png" width="70px" height="70px"></img>
         </a>
   
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+        <ul class="nav navbar navbar-secondary col-12 col-md-auto mb-2 justify-content-center mb-md-0">
           <li><a href="index.html" class="nav-link px-2 link-dark">Gestión</a></li>
           <li><a href="proyectos.html" class="nav-link px-2 link-dark">Proyectos</a></li>
         </ul>
