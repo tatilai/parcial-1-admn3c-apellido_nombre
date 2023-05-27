@@ -28,9 +28,11 @@ Vue.component('componente-gestion-tareas',{
 
 
     methods:{
-        continuarProyecto:function()
+        continuarProyecto:function(){
+            
+        }
 
-    }
+    },
 
        
 
