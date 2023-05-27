@@ -8,13 +8,14 @@ Vue.component('componente-gestion-tareas',{
             validar:true,
             vacio:true,
             listaProyectos:[],
+            proyectoModificado: null,
             estadoProyecto:[
-                'Completado',
                 'En progreso',
+                'Completado',
                 'Sin terminar'
             ],
             colorProyecto:''
-            //NO VOY  A PONER LA OPCION PARA EDITAR SOLO PARA BORRAR!!
+            
             //agregar filtro de busqueda con arrays!!
         }
     },
@@ -35,7 +36,7 @@ Vue.component('componente-gestion-tareas',{
                return 
              }
 
-             
+
 
         },
 
