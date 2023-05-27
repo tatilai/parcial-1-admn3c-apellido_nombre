@@ -48,9 +48,13 @@
 
 
    <div>
-    <form action="">
+    <form @submit.prevent = "continuarProyecto">
+    <div class="d-flex">
+      <label for="nombre">Nombre del proyecto</label>
+      <input v-model="nombreProyecto" type="text" id="nombre">
 
-      
+    </div>
+
     </form>
    </div>
    
