@@ -78,10 +78,17 @@
               <th scope="col">descripción</th>
               <th scope="col">Responsable del proyecto</th>
               <th scope="col" class="text-center">
-                <img src="" alt="">
+                <img src="img/iconografia/editar.png" class="editar">
+              </th>
+              <th scope="col" class="text-center">
+                <img src="img/iconografia/eliminar.png" class="eliminar">
               </th>
             </tr>
           </thead>
+          
+          <template v-if="vacio">
+            <p>No hay proyectos</p>
+          </template>
 
         </table>
 
