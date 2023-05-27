@@ -131,7 +131,7 @@ Vue.component('componente-gestion-proyectos',{
             this.proyectoModificado = index;
 
         },
-        //hola
+        
 
     },
 
