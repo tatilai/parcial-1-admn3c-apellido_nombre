@@ -4,6 +4,6 @@ var app = new Vue({
     data: {
       titulo:'Gestor de proyectos',
       imagenEquipo1: "img/equipo_1.png",
-      imagenEquipo2:"img/equipo_2.jpg"
+      imagenEquipo2:"img/equipo_2.png"
     }
   }); 
