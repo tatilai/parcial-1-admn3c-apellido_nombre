@@ -14,7 +14,7 @@ Vue.component('componente-gestion-tareas',{
                 'Sin terminar'
             ],
             colorProyecto:''
-
+            //NO VOY  A PONER LA OPCION PARA EDITAR SOLO PARA BORRAR!!
         }
     },
 
