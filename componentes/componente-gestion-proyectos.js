@@ -63,8 +63,10 @@ Vue.component('componente-gestion-tareas',{
                 this.descripcionProyecto = '';
              }
 
+        },
 
-
+        eliminar:function(index){
+            this.listaProyectos.splice(index,1)
         },
 
     },
