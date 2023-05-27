@@ -11,7 +11,7 @@ Vue.component('componente-gestion-proyectos',{
             proyectos:[],
             listaProyectos:[],
             proyectoModificado: null,
-            estadoProyecto:[
+            estados:[
                 'En progreso',
                 'Completado',
                 'Sin terminar'
@@ -132,6 +132,12 @@ Vue.component('componente-gestion-proyectos',{
 
         },
         
+        cambiarEstado:function(index){
+          let nuevoIndex=this.estados.indexOf(this.listaProyectos[index].estado);
+          if(++nuevoIndex>3) nuevoIndex=0;
+          this.listaProyectos[index].estado=this.estados[nuevoIndex]; 
+
+        }
 
     },
 
