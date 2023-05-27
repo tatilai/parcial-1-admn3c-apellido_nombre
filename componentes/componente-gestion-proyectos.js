@@ -15,6 +15,7 @@ Vue.component('componente-gestion-tareas',{
             ],
             colorProyecto:''
             //NO VOY  A PONER LA OPCION PARA EDITAR SOLO PARA BORRAR!!
+            //agregar filtro de busqueda con arrays!!
         }
     },
 
@@ -29,7 +30,7 @@ Vue.component('componente-gestion-tareas',{
 
     methods:{
         continuarProyecto:function(){
-            
+
         }
 
     },
