@@ -27,7 +27,7 @@ Vue.component('componente-gestion-proyectos',{
 
     template:`
 
-    <form class="col-12 col-lg-10 p-3">
+    <form @submit= "continuarProyecto" class="col-12 col-lg-10 p-3">
 
     
     <div>
@@ -57,11 +57,12 @@ Vue.component('componente-gestion-proyectos',{
       </div>     
       </div>
    
-    <button type="submit" class="botonContinuar" @click="continuarProyecto">Continuar</button> 
+    <button type="submit" class="botonContinuar">Continuar</button> 
 
-    <div v-if="mostrarError" class="error-message">
-      Por favor complete todos los campos.
-    </div>
+    <div :class="validar ? 'ingresado' : 'noIngresado'">
+    Por favor ingrese una tarea
+  </div>
+    
   </div>    
 
 
