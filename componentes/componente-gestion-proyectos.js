@@ -25,12 +25,15 @@ Vue.component('componente-gestion-proyectos',{
     
     template:`
 
-    <div>
+    <div clas="col-12 col-lg-10 p-3">
     <form @submit.prevent = "continuarProyecto">
-    <div class="d-flex">
-      <input v-model="nombreProyecto" class="form-control me-2"  type="text" id="nombre" placeholder="Nombre del proyecto">
-      <label for="nombre" class="form-label">Nombre del proyecto</label>     
-   
+    <div class="row g-2">
+    <div class="col-md"> 
+    <div class="form-floating mb-3>
+    <input v-model="nombreProyecto" class="form-control me-2"  type="text" id="nombre" name="nombre" placeholder="Nombre del proyecto">
+      <label for="nombre" class="form-label">Nombre del proyecto</label>
+       </div>           
+      </div>
 
        <div>
       <label for="descripcion">Descripción del Proyecto:</label>
