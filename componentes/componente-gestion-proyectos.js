@@ -5,7 +5,6 @@ Vue.component('componente-gestion-proyectos',{
             nombreProyecto:'',
             descripcionProyecto:'',
             responsableProyecto:'',
-            mostrarError:false,
             validar:true,
             vacio:true,
           //  filtro:'',
@@ -58,7 +57,7 @@ Vue.component('componente-gestion-proyectos',{
       </div>     
       </div>
    
-    <button type="submit" class="botonContinuar" @click="validarCampos">Continuar</button> 
+    <button type="submit" class="botonContinuar" @click="continuarProyecto">Continuar</button> 
 
     <div v-if="mostrarError" class="error-message">
       Por favor complete todos los campos.
@@ -133,15 +132,7 @@ Vue.component('componente-gestion-proyectos',{
 
 
     methods:{
-      validarCampos() {
-        if (this.nombreProyecto && this.responsableProyecto && this.descripcionProyecto) {
-          this.continuarProyecto();
-        } else {
-          this.mostrarError = true;
-        }
-      }, 
-
-        continuarProyecto:function(){
+            continuarProyecto:function(){
              if(this.nombreProyecto.length=== 0 || this.descripcionProyecto.lenght===0 || this.responsableProyecto.lenght===0){
                this.validar =false
                return 
