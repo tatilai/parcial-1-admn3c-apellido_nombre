@@ -40,7 +40,7 @@ Vue.component('componente-gestion-proyectos',{
 
       <div class="col-md">
       <div class="form-floating mb-3" > 
-      <input v-model="responsableProyecto" class="form-control me-2" type="text" id="responsable" name="responsable" placeholder="Responsable del proyecto" required>
+      <input v-model="responsableProyecto" class="form-control me-2" type="text" id="responsable" name="responsable" placeholder="Responsable del proyecto">
       <label for="responsable"  class="form-label">Responsable del Proyecto:</label>
        </div>         
         </div>
@@ -50,7 +50,7 @@ Vue.component('componente-gestion-proyectos',{
        <div class="col-md-6 col-lg"> 
        <div class="mx-3"> 
          <label for="descripcion" class="form-label ">Descripción del Proyecto:</label>
-          <textarea v-model="descripcionProyecto" class="form-control " id="descripcion" name="descripcion" required></textarea>
+          <textarea v-model="descripcionProyecto" class="form-control " id="descripcion" name="descripcion"></textarea>
       </div>      
       </div>     
       </div>
