@@ -55,14 +55,9 @@ Vue.component('componente-gestion-proyectos',{
       </div>     
       </div>
    
-    <button type="submit" class="botonContinuar" @click="continuarProyecto" >Continuar</button> 
-   </div> 
-   
-   
+    <button type="submit" class="botonContinuar" @click="nombreProyecto && responsableProyecto && descripcionProyecto ? continuarProyecto : alert('Por favor complete todos los campos.')">Continuar</button> 
+   </div>    
 
-    <div :class="validar ? 'ingresado' : 'noIngresado'">
-      <p>Por favor complete todos los campos.</p>
-    </div>
 
     <div class="card">
       <h1 class="card-title">Lista de proyectos </h1>
