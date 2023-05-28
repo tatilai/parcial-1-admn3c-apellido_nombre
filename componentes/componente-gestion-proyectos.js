@@ -7,8 +7,8 @@ Vue.component('componente-gestion-proyectos',{
             responsableProyecto:'',
             validar:true,
             vacio:true,
-            filtro:'',
-            proyectos:[],
+          //  filtro:'',
+          //  proyectos:[],
             listaProyectos:[],
             proyectoModificado: null,
             estados:[
