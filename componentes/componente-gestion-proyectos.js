@@ -28,7 +28,7 @@ Vue.component('componente-gestion-proyectos',{
     <div clas="col-12 col-lg-10 p-3">
     <form @submit.prevent = "continuarProyecto">
 
-    <div class="row g-2">
+    <div class="d-flex g-2">
 
     <div class="col-md"> 
     <div class="form-floating mb-3>
