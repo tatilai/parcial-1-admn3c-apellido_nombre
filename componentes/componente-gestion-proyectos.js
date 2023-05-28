@@ -5,6 +5,7 @@ Vue.component('componente-gestion-proyectos',{
             nombreProyecto:'',
             descripcionProyecto:'',
             responsableProyecto:'',
+            mostrarError:false,
             validar:true,
             vacio:true,
           //  filtro:'',
@@ -22,10 +23,12 @@ Vue.component('componente-gestion-proyectos',{
         }
     },
 
-    
+    //@submit.prevent = "continuarProyecto"
+    //@click="nombreProyecto && responsableProyecto && descripcionProyecto ? continuarProyecto : alert('Por favor complete todos los campos.')" 
+
     template:`
 
-    <form @submit.prevent = "continuarProyecto" class="col-12 col-lg-10 p-3">
+    <form class="col-12 col-lg-10 p-3">
 
     
     <div>
@@ -48,15 +51,19 @@ Vue.component('componente-gestion-proyectos',{
     
        <div class="row">
        <div class="col-md-6 col-lg"> 
-       <div class="mx-3"> 
+       <div class="mx-3 mb-3"> 
          <label for="descripcion" class="form-label ">Descripción del Proyecto:</label>
           <textarea v-model="descripcionProyecto" class="form-control " id="descripcion" name="descripcion"></textarea>
       </div>      
       </div>     
       </div>
    
-    <button type="submit" class="botonContinuar" @click="nombreProyecto && responsableProyecto && descripcionProyecto ? continuarProyecto : alert('Por favor complete todos los campos.')">Continuar</button> 
-   </div>    
+    <button type="submit" class="botonContinuar" @click="validarCampos">Continuar</button> 
+
+    <div v-if="mostrarError" class="error-message">
+      Por favor complete todos los campos.
+    </div>
+  </div>    
 
 
     <div class="card">
@@ -126,6 +133,14 @@ Vue.component('componente-gestion-proyectos',{
 
 
     methods:{
+      validarCampos() {
+        if (this.nombreProyecto && this.responsableProyecto && this.descripcionProyecto) {
+          this.continuarProyecto();
+        } else {
+          this.mostrarError = true;
+        }
+      }, 
+
         continuarProyecto:function(){
              if(this.nombreProyecto.length=== 0 || this.descripcionProyecto.lenght===0 || this.responsableProyecto.lenght===0){
                this.validar =false
