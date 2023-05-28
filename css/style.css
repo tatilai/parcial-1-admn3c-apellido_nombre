@@ -22,3 +22,15 @@ body{
   .botonContinuar:hover{
     background-color: #fcd19d;
   }
+
+  .enprogreso{
+    background-color: #abb6c8;
+  }
+
+  .completado{
+    background-color: green;
+  }
+
+  .sinterminar{
+    background-color: red;
+  }

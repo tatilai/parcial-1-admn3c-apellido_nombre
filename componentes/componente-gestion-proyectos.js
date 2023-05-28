@@ -101,7 +101,7 @@ Vue.component('componente-gestion-proyectos',{
                 <td>{{ proyecto.descripcion }}</td>
                  <td>{{ proyecto.responsableProyecto }}</td>
                  <td>
-                <button type="submit" class="btn btn-outline-dark" @click="cambiarEstado(index)">{{nombreProyecto.estado}}</button>
+                <button type="submit" class="btn btn-outline-dark" @click="cambiarEstado(index)">{{listaProyectos[index].estado}}</button>
                 </td>
 
               
@@ -232,9 +232,9 @@ Vue.component('componente-gestion-proyectos',{
         },
         
         cambiarEstado:function(index){
-          let nuevoIndex=this.estados.indexOf(this.listaProyectos[index].estado);
+          let nuevoIndex=this.estados.indexOf(this.listaProyectos[index].estados);
           if(++nuevoIndex>3) nuevoIndex=0;
-          this.listaProyectos[index].estado=this.estados[nuevoIndex]; 
+          this.listaProyectos[index].estados=this.estados[nuevoIndex]; 
 
         }
 
