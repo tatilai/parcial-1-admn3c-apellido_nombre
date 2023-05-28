@@ -25,6 +25,10 @@ Vue.component('componente-gestion-proyectos',{
 
     //@submit = "continuarProyecto"
     //@click="nombreProyecto && responsableProyecto && descripcionProyecto ? continuarProyecto : alert('Por favor complete todos los campos.')" 
+   // <td>{{ proyecto.descripcionProyecto }}</td>
+                 
+
+
 
     template:`
 
@@ -93,14 +97,12 @@ Vue.component('componente-gestion-proyectos',{
           <template v-else>
             <tbody>
               <tr v-for="(proyecto,index) in listaProyectos" :key="index" :class="proyecto.estados" class="mb-3">
-                <th scope="row">{{proyecto.descripcion}}</th>
+                <th scope="row">{{proyecto.nombreProyecto}}</th>
+                <td>{{ proyecto.descripcion }}</td>
+                 <td>{{ proyecto.responsableProyecto }}</td>
                  <td>
                 <button type="submit" class="btn btn-outline-dark" @click="cambiarEstado(index)">{{proyecto.estados}}</button>
                 </td>
-                 <td>{{ proyecto.nombreProyecto }}</td>
-                 <td>{{ proyecto.responsableProyecto }}</td>
-                 <td>{{ proyecto.descripcionProyecto }}</td>
-             
 
               
               <td>
