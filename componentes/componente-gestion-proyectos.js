@@ -27,22 +27,28 @@ Vue.component('componente-gestion-proyectos',{
 
     <div clas="col-12 col-lg-10 p-3">
     <form @submit.prevent = "continuarProyecto">
+
     <div class="row g-2">
+
     <div class="col-md"> 
     <div class="form-floating mb-3>
-    <input v-model="nombreProyecto" class="form-control me-2"  type="text" id="nombre" name="nombre" placeholder="Nombre del proyecto">
-      <label for="nombre" class="form-label">Nombre del proyecto</label>
-       </div>           
-      </div>
+      <input v-model="nombreProyecto" class="form-control me-2"  type="text" id="nombre" name="nombre" placeholder="Nombre del proyecto">
+      <label for="nombre" class="form-label">Nombre del proyecto</label> 
+    </div>                 
+    </div>
+
+      <div class="col-md">
+      <div class="form-floating mb-3 > 
+      <input v-model="responsableProyecto" class="form-control me-2" type="text" id="responsable" placeholder="Responsable del proyecto" required>
+      <label for="responsable"  class="form-label">Responsable del Proyecto:</label>
+       </div>         
+        </div>
 
        <div>
       <label for="descripcion">Descripción del Proyecto:</label>
       <textarea v-model="descripcionProyecto" id="descripcion" required></textarea>
       </div>
-       <div>
-       <input v-model="responsableProyecto" class="form-control me-2" type="text" id="responsable" placeholder="Responsable del proyecto" required>
-      <label for="responsable"  class="form-label">Responsable del Proyecto:</label>   
-        </div>
+    
    </div>
     <button type="submit">Continuar</button> 
 
