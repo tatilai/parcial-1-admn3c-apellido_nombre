@@ -138,13 +138,13 @@ Vue.component('componente-gestion-proyectos',{
               </td>
               <td>
                 <button type="button" class="btn" @click="eliminar">
-                  <img src="img/iconografia/eliminar.png
-                  " alt="eliminar">
+                  <img src="img/iconografia/eliminar.png 
+                  " width="50px" heigth="50px" alt="eliminar">
                 </button>
               </td>
               <td>
                 <button type="button" class="btn" @click="editar(index)">
-                  <img src="img/iconografia/editar.png" alt="editar">
+                  <img src="img/iconografia/editar.png" width="50px" heigth="50px" alt="editar">
                 </button>
               </td>
 
