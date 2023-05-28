@@ -25,67 +25,11 @@ Vue.component('componente-gestion-proyectos',{
     
     template:`
 
-  
-
-
-
-
-    `,
-
-
-    methods:{
-        continuarProyecto:function(){
-             if(this.nombreProyecto.length=== 0 || this.descripcionProyecto.lenght===0 || this.responsableProyecto.lenght===0){
-               this.validar =false
-               return 
-             }
-
-             if(this.proyectoModificado===null){
-                this.validar =true;
-                this.vacio =false;
-
-               this.listaProyectos.push({
-                nombreProyecto:this.nombreProyecto,
-                responsableProyecto:this.responsableProyecto,
-                descripcionProyecto:this.descripcionProyecto,
-                estado:'En progreso'                
-
-
-               });
-               this.nombreProyecto = '';
-               this.responsableProyecto = '';
-               this.descripcionProyecto = '';
-
-             }else{
-                this.listaProyectos[this.proyectoModificado].nombreProyecto = this.nombreProyecto;
-                this.listaProyectos[this.proyectoModificado].responsableProyecto = this.responsableProyecto;
-                this.listaProyectos[this.proyectoModificado].descripcionProyecto = this.descripcionProyecto;
-                this.proyectoModificado = null;
-              
-                this.nombreProyecto = '';
-                this.responsableProyecto = '';
-                this.descripcionProyecto = '';
-             }
-
-        },
-
-        eliminar:function(index){
-            this.listaProyectos.splice(index,1)
-        },
-
-    },
-
-       
-
-
-    
-    template:`
-
     <div>
     <form @submit.prevent = "continuarProyecto">
     <div class="d-flex">
       <label for="nombre">Nombre del proyecto</label>
-      <input v-model="nombreProyecto" clas type="text" id="nombre">
+      <input v-model="nombreProyecto" class="form-control me-2" placeholder="Nombre del proyecto" type="text" id="nombre">
     </div>
     <div>
       <label for="descripcion">Descripción del Proyecto:</label>
@@ -93,7 +37,7 @@ Vue.component('componente-gestion-proyectos',{
     </div>
     <div>
       <label for="responsable">Responsable del Proyecto:</label>
-      <input v-model="responsableProyecto" type="text" id="responsable" required>
+      <input v-model="responsableProyecto" class="form-control me-2" placeholder="Responsable del proyecto" type="text" id="responsable" required>
     </div>
     <button type="submit">Continuar</button> 
 
@@ -166,6 +110,55 @@ Vue.component('componente-gestion-proyectos',{
 
 
     `,
+
+
+    methods:{
+        continuarProyecto:function(){
+             if(this.nombreProyecto.length=== 0 || this.descripcionProyecto.lenght===0 || this.responsableProyecto.lenght===0){
+               this.validar =false
+               return 
+             }
+
+             if(this.proyectoModificado===null){
+                this.validar =true;
+                this.vacio =false;
+
+               this.listaProyectos.push({
+                nombreProyecto:this.nombreProyecto,
+                responsableProyecto:this.responsableProyecto,
+                descripcionProyecto:this.descripcionProyecto,
+                estado:'En progreso'                
+
+
+               });
+               this.nombreProyecto = '';
+               this.responsableProyecto = '';
+               this.descripcionProyecto = '';
+
+             }else{
+                this.listaProyectos[this.proyectoModificado].nombreProyecto = this.nombreProyecto;
+                this.listaProyectos[this.proyectoModificado].responsableProyecto = this.responsableProyecto;
+                this.listaProyectos[this.proyectoModificado].descripcionProyecto = this.descripcionProyecto;
+                this.proyectoModificado = null;
+              
+                this.nombreProyecto = '';
+                this.responsableProyecto = '';
+                this.descripcionProyecto = '';
+             }
+
+        },
+
+        eliminar:function(index){
+            this.listaProyectos.splice(index,1)
+        },
+
+    },
+
+       
+
+
+    
+ 
 
     methods:{
         continuarProyecto:function(){
