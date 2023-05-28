@@ -97,7 +97,7 @@
                  <td>{{ proyecto.nombreProyecto }}</td>
                  <td>{{ proyecto.responsableProyecto }}</td>
                  <td>{{ proyecto.descripcionProyecto }}</td>
-              </tr>
+             
 
               <td>
                 <button type="submit" class="btn btn-outline-dark" @click="cambiarEstado(index)">{{proyecto.estados}}</button>
@@ -108,8 +108,13 @@
                   " alt="eliminar">
                 </button>
               </td>
-              
+              <td>
+                <button type="button" class="btn" @click="editar(index)">
+                  <img src="img/iconografia/editar.png" alt="editar">
+                </button>
+              </td>
 
+             </tr>
             </tbody>
           </template>
 
