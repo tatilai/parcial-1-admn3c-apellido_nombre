@@ -25,13 +25,12 @@ Vue.component('componente-gestion-proyectos',{
     
     template:`
 
-    <form @submit.prevent = "continuarProyecto">
+    <form @submit.prevent = "continuarProyecto" class="col-12 col-lg-10 p-3">
 
-    <form class="col-12 col-lg-10 p-3">
-    <div class="d-flex g-2">
-
-
-    <div class="row">
+    
+    <div>
+      <div class="d-flex"> 
+       <div class="row">
        <div class="col-md"> 
         <div class="form-floating mb-3">
         <input v-model="nombreProyecto" class="form-control me-2"  type="text" id="nombre" aria-label="Nombre del proyecto" placeholder="Nombre del proyecto">  
@@ -56,8 +55,10 @@ Vue.component('componente-gestion-proyectos',{
       </div>     
       </div>
    
-    <button type="submit">Continuar</button>  
-   </div>
+    <button type="submit">Continuar</button> 
+   </div> 
+   
+   
 
     <div :class="validar ? 'ingresado' : 'noIngresado'">
       <p>Por favor complete todos los campos.</p>
@@ -120,8 +121,13 @@ Vue.component('componente-gestion-proyectos',{
       </div>
 
     </div>
+
+   </div>
+
   </form>
     `,
+
+  
 
 
     methods:{
