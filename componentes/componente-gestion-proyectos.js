@@ -49,13 +49,13 @@ Vue.component('componente-gestion-proyectos',{
        <div class="row">
        <div class="col-md-6 col-lg"> 
        <div class="mb-3"> 
-         <label for="descripcion" class="form-label">Descripción del Proyecto:</label>
+         <label for="descripcion" class="form-label me-2">Descripción del Proyecto:</label>
           <textarea v-model="descripcionProyecto" class="form-control" id="descripcion" name="descripcion" required></textarea>
       </div>      
       </div>     
       </div>
    
-    <button type="submit" @click="continuarProyecto" >Continuar</button> 
+    <button type="submit" class="me-2" @click="continuarProyecto" >Continuar</button> 
    </div> 
    
    
