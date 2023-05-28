@@ -8,3 +8,8 @@ body{
     margin-left: auto;
     margin-right: auto;
   }
+
+  .botonContinuar{
+    border-radius: 5px;
+    margin-left: 10px;
+  }

@@ -55,7 +55,7 @@ Vue.component('componente-gestion-proyectos',{
       </div>     
       </div>
    
-    <button type="submit" class="me-2" @click="continuarProyecto" >Continuar</button> 
+    <button type="submit" class="botonContinuar" @click="continuarProyecto" >Continuar</button> 
    </div> 
    
    
