@@ -27,23 +27,25 @@ Vue.component('componente-gestion-proyectos',{
 
     <form @submit.prevent = "continuarProyecto">
 
-    <div clas="col-12 col-lg-10 p-3">
+    <form class="col-12 col-lg-10 p-3">
     <div class="d-flex g-2">
 
-    <div class="col-md"> 
-    <div class="form-floating mb-3>
-      <input v-model="nombreProyecto" class="form-control me-2"  type="text" id="nombre" aria-label="Nombre del proyecto" placeholder="Nombre del proyecto">
-     
-    </div>                 
-    </div>
+
+    <div class="row">
+       <div class="col-md"> 
+        <div class="form-floating mb-3">
+        <input v-model="nombreProyecto" class="form-control me-2"  type="text" id="nombre" aria-label="Nombre del proyecto" placeholder="Nombre del proyecto">     
+        </div>                 
+      </div>
 
       <div class="col-md">
-      <div class="form-floating mb-3 > 
+      <div class="form-floating mb-3" > 
       <input v-model="responsableProyecto" class="form-control me-2" type="text" id="responsable" name="responsable" placeholder="Responsable del proyecto" required>
       <label for="responsable"  class="form-label">Responsable del Proyecto:</label>
        </div>         
         </div>
-
+    </div>
+    
        <div class="row">
        <div class="col-md-6 col-lg"> 
        <div class="mb-3"> 
@@ -52,17 +54,17 @@ Vue.component('componente-gestion-proyectos',{
       </div>      
       </div>     
       </div>
-    
+   
+    <button type="submit">Continuar</button>  
    </div>
-    <button type="submit">Continuar</button> 
 
     <div :class="validar ? 'ingresado' : 'noIngresado'">
       <p>Por favor complete todos los campos.</p>
     </div>
 
     <div class="card">
-      <div class="card-body">
-        <h1 class="card-title">Lista de proyectos </h1>
+      <h1 class="card-title">Lista de proyectos </h1>
+      <div class="card-body">        
 
         <table class="table mt-4">
           <thead>
@@ -117,13 +119,7 @@ Vue.component('componente-gestion-proyectos',{
       </div>
 
     </div>
-     </form>
-   </div>
-   
-    
-
-
-
+  </form>
     `,
 
 
