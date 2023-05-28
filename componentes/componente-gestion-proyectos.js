@@ -5,6 +5,7 @@ Vue.component('componente-gestion-proyectos',{
             nombreProyecto:'',
             descripcionProyecto:'',
             responsableProyecto:'',
+           mostrarError:false,
             validar:true,
             vacio:true,
           //  filtro:'',
@@ -22,12 +23,12 @@ Vue.component('componente-gestion-proyectos',{
         }
     },
 
-    //@submit.prevent = "continuarProyecto"
+    //@submit = "continuarProyecto"
     //@click="nombreProyecto && responsableProyecto && descripcionProyecto ? continuarProyecto : alert('Por favor complete todos los campos.')" 
 
     template:`
 
-    <form @submit= "continuarProyecto" class="col-12 col-lg-10 p-3">
+    <form @submit.prevent="continuarProyecto" class="col-12 col-lg-10 p-3">
 
     
     <div>
@@ -43,7 +44,7 @@ Vue.component('componente-gestion-proyectos',{
       <div class="col-md">
       <div class="form-floating mb-3" > 
       <input v-model="responsableProyecto" class="form-control me-2" type="text" id="responsable" name="responsable" placeholder="Responsable del proyecto">
-      <label for="responsable"  class="form-label">Responsable del Proyecto:</label>
+      <label for="responsable" class="form-label">Responsable</label>   
        </div>         
         </div>
     </div>
@@ -59,8 +60,8 @@ Vue.component('componente-gestion-proyectos',{
    
     <button type="submit" class="botonContinuar">Continuar</button> 
 
-    <div :class="validar ? 'ingresado' : 'noIngresado'">
-    Por favor ingrese una tarea
+    <div :class="mostrarError ? 'ingresado' : 'noIngresado'">
+    Por favor complete todos los campos.
   </div>
     
   </div>    
@@ -93,15 +94,15 @@ Vue.component('componente-gestion-proyectos',{
             <tbody>
               <tr v-for="(proyecto,index) in listaProyectos" :key="index" :class="proyecto.estados" class="mb-3">
                 <th scope="row">{{proyecto.descripcion}}</th>
-                 <!-- Resto de los datos del proyecto -->
+                 <td>
+                <button type="submit" class="btn btn-outline-dark" @click="cambiarEstado(index)">{{proyecto.estados}}</button>
+                </td>
                  <td>{{ proyecto.nombreProyecto }}</td>
                  <td>{{ proyecto.responsableProyecto }}</td>
                  <td>{{ proyecto.descripcionProyecto }}</td>
              
 
-              <td>
-                <button type="submit" class="btn btn-outline-dark" @click="cambiarEstado(index)">{{proyecto.estados}}</button>
-              </td>
+              
               <td>
                 <button type="button" class="btn" @click="eliminar">
                   <img src="img/iconografia/eliminar.png 
