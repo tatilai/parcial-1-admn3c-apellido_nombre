@@ -12,6 +12,7 @@ body{
   .botonContinuar{
     border-radius: 5px;
     margin-left: 10px;
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #f9ddb8;
   }
