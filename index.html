@@ -91,9 +91,12 @@
           </template>
           <template v-else>
             <tbody>
-              <tr v-for="(nombreProyecto,index) in listaProyectos" :key="index" :class="" class="mb-3">
-                <th scope="row">{{}}</th>
-
+              <tr v-for="(proyecto,index) in listaProyectos" :key="index" :class="proyecto.estados" class="mb-3">
+                <th scope="row">{{proyecto.descripcion}}</th>
+                 <!-- Resto de los datos del proyecto -->
+      <td>{{ proyecto.nombreProyecto }}</td>
+      <td>{{ proyecto.responsableProyecto }}</td>
+      <td>{{ proyecto.descripcionProyecto }}</td>
               </tr>
             </tbody>
           </template>
