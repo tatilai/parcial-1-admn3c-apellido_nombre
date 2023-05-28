@@ -28,19 +28,19 @@ Vue.component('componente-gestion-proyectos',{
     <div>
     <form @submit.prevent = "continuarProyecto">
     <div class="d-flex">
-     <input v-model="nombreProyecto" class="form-control me-2"  type="text" id="nombre" placeholder="Nombre del proyecto">
-      <label for="nombre" class="form-label">Nombre del proyecto</label>
-     
-    </div>
-    <div>
+      <input v-model="nombreProyecto" class="form-control me-2"  type="text" id="nombre" placeholder="Nombre del proyecto">
+      <label for="nombre" class="form-label">Nombre del proyecto</label>     
+   
+
+       <div>
       <label for="descripcion">Descripción del Proyecto:</label>
       <textarea v-model="descripcionProyecto" id="descripcion" required></textarea>
-    </div>
-    <div>
+      </div>
+       <div>
        <input v-model="responsableProyecto" class="form-control me-2" type="text" id="responsable" placeholder="Responsable del proyecto" required>
-      <label for="responsable"  class="form-label">Responsable del Proyecto:</label>
-   
-    </div>
+      <label for="responsable"  class="form-label">Responsable del Proyecto:</label>   
+        </div>
+   </div>
     <button type="submit">Continuar</button> 
 
     <div :class="validar ? 'ingresado' : 'noIngresado'">
