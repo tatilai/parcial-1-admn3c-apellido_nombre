@@ -99,7 +99,17 @@
                  <td>{{ proyecto.descripcionProyecto }}</td>
               </tr>
 
+              <td>
+                <button type="submit" class="btn btn-outline-dark" @click="cambiarEstado(index)">{{proyecto.estados}}</button>
+              </td>
+              <td>
+                <button type="button" class="btn" @click="eliminar">
+                  <img src="img/iconografia/eliminar.png
+                  " alt="eliminar">
+                </button>
+              </td>
               
+
             </tbody>
           </template>
 
