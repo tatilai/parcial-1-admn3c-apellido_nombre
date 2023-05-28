@@ -85,7 +85,7 @@ Vue.component('componente-gestion-proyectos',{
     <form @submit.prevent = "continuarProyecto">
     <div class="d-flex">
       <label for="nombre">Nombre del proyecto</label>
-      <input v-model="nombreProyecto" type="text" id="nombre">
+      <input v-model="nombreProyecto" clas type="text" id="nombre">
     </div>
     <div>
       <label for="descripcion">Descripción del Proyecto:</label>
@@ -111,6 +111,7 @@ Vue.component('componente-gestion-proyectos',{
               <th scope="col">Nombre del proyecto</th>
               <th scope="col">descripción</th>
               <th scope="col">Responsable del proyecto</th>
+              <th scope="col">Estado del proyecto</th>
               <th scope="col" class="text-center">
                 <img src="img/iconografia/editar.png" class="editar">
               </th>
