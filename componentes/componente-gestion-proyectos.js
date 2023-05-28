@@ -32,7 +32,7 @@ Vue.component('componente-gestion-proyectos',{
 
     <div class="col-md"> 
     <div class="form-floating mb-3>
-      <input v-model="nombreProyecto" class="form-control me-2"  type="text" id="nombre" name="nombre" placeholder="Nombre del proyecto">
+      <input v-model="nombreProyecto" class="form-control me-2"  type="text" id="nombre"  placeholder="Nombre del proyecto">
       <label for="nombre" class="form-label">Nombre del proyecto</label> 
     </div>                 
     </div>
