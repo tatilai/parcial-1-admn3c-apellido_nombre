@@ -25,9 +25,9 @@ Vue.component('componente-gestion-proyectos',{
     
     template:`
 
-    <div clas="col-12 col-lg-10 p-3">
     <form @submit.prevent = "continuarProyecto">
 
+    <div clas="col-12 col-lg-10 p-3">
     <div class="d-flex g-2">
 
     <div class="col-md"> 
