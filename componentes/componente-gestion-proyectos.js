@@ -6,7 +6,7 @@ Vue.component('componente-gestion-proyectos',{
             descripcionProyecto:'',
             responsableProyecto:'',
            mostrarError:false,
-            validar:true,
+            validar:false,
             vacio:true,
           //  filtro:'',
           //  proyectos:[],
