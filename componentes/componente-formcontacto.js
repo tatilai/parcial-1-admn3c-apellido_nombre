@@ -5,6 +5,7 @@ Vue.component('componente-formcontacto',{
            quipos: [
                     {
                       nombre: '',
+                      mensaje:'',
                       miembros: [
                         {
                           nombre: '',
@@ -18,4 +19,11 @@ Vue.component('componente-formcontacto',{
         }
     },
 
+
+
+  template:`
+`,  
+
 });
+
+
