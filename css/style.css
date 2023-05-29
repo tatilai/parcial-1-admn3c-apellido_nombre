@@ -27,3 +27,8 @@ body{
     background-color: #abb6c8;
   }
 
+.noIngresado{
+  color:#d65130;
+  font-weight: bold;
+  margin-left: 5px;
+}

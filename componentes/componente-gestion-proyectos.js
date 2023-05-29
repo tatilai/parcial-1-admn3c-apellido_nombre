@@ -98,7 +98,7 @@ Vue.component('componente-gestion-proyectos',{
             <tbody>
               <tr v-for="(proyecto,index) in listaProyectos" :key="index" :class="proyecto.estados" class="mb-3">
                 <th scope="row">{{proyecto.nombreProyecto}}</th>
-                <td>{{ proyecto.descripcion }}</td>
+                <td>{{ proyecto.descripcionProyecto }}</td>
                  <td>{{ proyecto.responsableProyecto }}</td>
                  <td>
                 <button type="submit" class="btn btn-outline-dark btn-estado" @click="cambiarEstado(index)">{{listaProyectos[index].estado}}</button>
