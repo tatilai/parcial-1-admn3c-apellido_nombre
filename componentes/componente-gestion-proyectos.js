@@ -200,14 +200,28 @@ Vue.component('componente-gestion-proyectos',{
                 this.validar =true;
                 this.vacio =false;
 
-               this.listaProyectos.push({
+                  // Guardar datos en localStorage
+              const proyecto = {
+               nombreProyecto: this.nombreProyecto,
+               responsableProyecto: this.responsableProyecto,
+               descripcionProyecto: this.descripcionProyecto,
+               estado: 'En progreso'
+               };
+
+                 // Obtener los datos previamente guardados en localStorage
+                const proyectosGuardados = localStorage.getItem('proyectos');
+                let listaProyectos = [];
+
+               /* this.listaProyectos.push({
                 nombreProyecto:this.nombreProyecto,
                 responsableProyecto:this.responsableProyecto,
                 descripcionProyecto:this.descripcionProyecto,
                 estado:'En progreso'                
 
 
-               });
+               });*/
+
+
                this.nombreProyecto = '';
                this.responsableProyecto = '';
                this.descripcionProyecto = '';
