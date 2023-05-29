@@ -23,6 +23,14 @@ Vue.component('componente-gestion-proyectos',{
         }
     },
 
+    created() {
+      const proyectosGuardados = localStorage.getItem('proyectos');
+      if (proyectosGuardados) {
+        this.listaProyectos = JSON.parse(proyectosGuardados);
+        this.vacio = false;
+      }
+    },
+
     //@submit = "continuarProyecto"
     //@click="nombreProyecto && responsableProyecto && descripcionProyecto ? continuarProyecto : alert('Por favor complete todos los campos.')" 
    // <td>{{ proyecto.descripcionProyecto }}</td>
@@ -130,53 +138,7 @@ Vue.component('componente-gestion-proyectos',{
    </div>
 
   </form>
-    `,
-
-  
-
-
-    methods:{
-            continuarProyecto:function(){
-             if(this.nombreProyecto.length=== 0 || this.descripcionProyecto.lenght===0 || this.responsableProyecto.lenght===0){
-               this.validar =false
-               this.mostrarError=true
-               return 
-             }
-
-             if(this.proyectoModificado===null){
-                this.validar =true;
-                this.vacio =false;
-
-               this.listaProyectos.push({
-                nombreProyecto:this.nombreProyecto,
-                responsableProyecto:this.responsableProyecto,
-                descripcionProyecto:this.descripcionProyecto,
-                estado:'En progreso'                
-
-
-               });
-               this.nombreProyecto = '';
-               this.responsableProyecto = '';
-               this.descripcionProyecto = '';
-
-             }else{
-                this.listaProyectos[this.proyectoModificado].nombreProyecto = this.nombreProyecto;
-                this.listaProyectos[this.proyectoModificado].responsableProyecto = this.responsableProyecto;
-                this.listaProyectos[this.proyectoModificado].descripcionProyecto = this.descripcionProyecto;
-                this.proyectoModificado = null;
-              
-                this.nombreProyecto = '';
-                this.responsableProyecto = '';
-                this.descripcionProyecto = '';
-             }
-
-        },
-
-        eliminar:function(index){
-            this.listaProyectos.splice(index,1)
-        },
-
-    },
+   `,
 
        
 
@@ -201,7 +163,7 @@ Vue.component('componente-gestion-proyectos',{
                 this.vacio =false;
 
                   // Guardar datos en localStorage
-              const proyecto = {
+                const proyecto = {
                nombreProyecto: this.nombreProyecto,
                responsableProyecto: this.responsableProyecto,
                descripcionProyecto: this.descripcionProyecto,
@@ -222,14 +184,14 @@ Vue.component('componente-gestion-proyectos',{
                  // Guardar la lista actualizada en localStorage
                 localStorage.setItem('proyectos', JSON.stringify(listaProyectos));
 
-               /* this.listaProyectos.push({
+                this.listaProyectos.push({
                 nombreProyecto:this.nombreProyecto,
                 responsableProyecto:this.responsableProyecto,
                 descripcionProyecto:this.descripcionProyecto,
                 estado:'En progreso'                
 
 
-               });*/
+               });
 
 
                this.nombreProyecto = '';
@@ -247,11 +209,19 @@ Vue.component('componente-gestion-proyectos',{
                 this.descripcionProyecto = '';
              }
 
+                // Guardar proyectos en el localStorage
+               localStorage.setItem('proyectos', JSON.stringify(this.listaProyectos));
+    
+
         },
 
         eliminar:function(index){
             this.listaProyectos.splice(index,1)
         },
+
+         // Actualizar proyectos en el localStorage
+      localStorage.setItem('proyectos', JSON.stringify(this.listaProyectos));
+    
 
         editar:function(index){
             this.nombreProyecto = this.listaProyectos[index].nombreProyecto;
