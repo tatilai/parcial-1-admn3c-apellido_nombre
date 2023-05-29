@@ -31,9 +31,7 @@ Vue.component('componente-gestion-proyectos',{
       }
     },
 
-    //@submit = "continuarProyecto"
-    //@click="nombreProyecto && responsableProyecto && descripcionProyecto ? continuarProyecto : alert('Por favor complete todos los campos.')" 
-   // <td>{{ proyecto.descripcionProyecto }}</td>
+  
                  
 
 
