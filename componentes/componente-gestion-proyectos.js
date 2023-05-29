@@ -212,6 +212,16 @@ Vue.component('componente-gestion-proyectos',{
                 const proyectosGuardados = localStorage.getItem('proyectos');
                 let listaProyectos = [];
 
+                if (proyectosGuardados) {
+                  listaProyectos = JSON.parse(proyectosGuardados);
+                }
+
+                 // Agregar el nuevo proyecto a la lista
+                listaProyectos.push(proyecto);
+
+                 // Guardar la lista actualizada en localStorage
+                localStorage.setItem('proyectos', JSON.stringify(listaProyectos));
+
                /* this.listaProyectos.push({
                 nombreProyecto:this.nombreProyecto,
                 responsableProyecto:this.responsableProyecto,
