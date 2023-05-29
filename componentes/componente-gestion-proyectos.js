@@ -40,6 +40,7 @@ Vue.component('componente-gestion-proyectos',{
 
     template:`
 
+    <div class="d-flex justify-content-center">
     <form @submit.prevent="continuarProyecto" class="col-12 col-lg-10 p-3">
 
     
@@ -136,8 +137,8 @@ Vue.component('componente-gestion-proyectos',{
     </div>
 
    </div>
-
-  </form>
+   </form>
+  </div>
    `,
 
        
