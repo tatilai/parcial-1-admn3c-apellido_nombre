@@ -101,7 +101,7 @@ Vue.component('componente-gestion-proyectos',{
                 <td>{{ proyecto.descripcion }}</td>
                  <td>{{ proyecto.responsableProyecto }}</td>
                  <td>
-                <button type="submit" class="btn btn-outline-dark" @click="cambiarEstado(index)">{{listaProyectos[index].estado}}</button>
+                <button type="submit" class="btn btn-outline-dark" @click="cambiarEstado(index)">{{listaProyectos[index].estados}}</button>
                 </td>
 
               
