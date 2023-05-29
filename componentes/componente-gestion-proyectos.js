@@ -145,74 +145,7 @@ Vue.component('componente-gestion-proyectos',{
     
  
 
-    methods:{
-         /* continuarProyecto: function() {
-          if (
-          this.nombreProyecto.trim().length === 0 ||
-          this.descripcionProyecto.trim().length === 0 ||
-          this.responsableProyecto.trim().length === 0
-          ) {
-          this.validar = false;
-          this.mostrarError = true;
-          return;
-          }
-
-             if(this.proyectoModificado===null){
-                this.validar =true;
-                this.vacio =false;
-
-                  // Guardar datos en localStorage
-                const proyecto = {
-               nombreProyecto: this.nombreProyecto,
-               responsableProyecto: this.responsableProyecto,
-               descripcionProyecto: this.descripcionProyecto,
-               estado: 'En progreso'
-               };
-
-                 // Obtener los datos previamente guardados en localStorage
-                const proyectosGuardados = localStorage.getItem('proyectos');
-                let listaProyectos = [];
-
-                if (proyectosGuardados) {
-                  listaProyectos = JSON.parse(proyectosGuardados);
-                }
-
-                 // Agregar el nuevo proyecto a la lista
-                listaProyectos.push(proyecto);
-
-                 // Guardar la lista actualizada en localStorage
-                localStorage.setItem('proyectos', JSON.stringify(listaProyectos));
-
-                this.listaProyectos.push({
-                nombreProyecto:this.nombreProyecto,
-                responsableProyecto:this.responsableProyecto,
-                descripcionProyecto:this.descripcionProyecto,
-                estado:'En progreso'                
-
-
-               });
-
-
-               this.nombreProyecto = '';
-               this.responsableProyecto = '';
-               this.descripcionProyecto = '';
-
-             }else{
-                this.listaProyectos[this.proyectoModificado].nombreProyecto = this.nombreProyecto;
-                this.listaProyectos[this.proyectoModificado].responsableProyecto = this.responsableProyecto;
-                this.listaProyectos[this.proyectoModificado].descripcionProyecto = this.descripcionProyecto;
-                this.proyectoModificado = null;
-              
-                this.nombreProyecto = '';
-                this.responsableProyecto = '';
-                this.descripcionProyecto = '';
-             }
-
-                // Guardar proyectos en el localStorage
-               localStorage.setItem('proyectos', JSON.stringify(this.listaProyectos));
-    
-
-        },*/
+    methods:{        
 
         continuarProyecto: function() {
           if (
