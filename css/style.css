@@ -23,14 +23,7 @@ body{
     background-color: #fcd19d;
   }
 
-  .enprogreso{
+  .btn-estado{
     background-color: #abb6c8;
   }
 
-  .completado{
-    background-color: green;
-  }
-
-  .sinterminar{
-    background-color: red;
-  }

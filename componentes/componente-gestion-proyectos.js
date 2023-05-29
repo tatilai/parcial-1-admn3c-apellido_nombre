@@ -64,7 +64,7 @@ Vue.component('componente-gestion-proyectos',{
    
     <button type="submit" class="botonContinuar">Continuar</button> 
 
-    <div :class="mostrarError ? 'ingresado' : 'noIngresado'">
+    <div :class="validar ? 'ingresado' : 'noIngresado'">
     Por favor complete todos los campos.
   </div>
     
@@ -101,7 +101,7 @@ Vue.component('componente-gestion-proyectos',{
                 <td>{{ proyecto.descripcion }}</td>
                  <td>{{ proyecto.responsableProyecto }}</td>
                  <td>
-                <button type="submit" class="btn btn-outline-dark" @click="cambiarEstado(index)">{{listaProyectos[index].estado}}</button>
+                <button type="submit" class="btn btn-outline-dark btn-estado" @click="cambiarEstado(index)">{{listaProyectos[index].estado}}</button>
                 </td>
 
               
@@ -139,6 +139,7 @@ Vue.component('componente-gestion-proyectos',{
             continuarProyecto:function(){
              if(this.nombreProyecto.length=== 0 || this.descripcionProyecto.lenght===0 || this.responsableProyecto.lenght===0){
                this.validar =false
+               this.mostrarError=true
                return 
              }
 
