@@ -147,7 +147,7 @@ Vue.component('componente-gestion-proyectos',{
  
 
     methods:{
-          continuarProyecto: function() {
+         /* continuarProyecto: function() {
           if (
           this.nombreProyecto.trim().length === 0 ||
           this.descripcionProyecto.trim().length === 0 ||
@@ -213,14 +213,70 @@ Vue.component('componente-gestion-proyectos',{
                localStorage.setItem('proyectos', JSON.stringify(this.listaProyectos));
     
 
+        },*/
+
+        continuarProyecto: function() {
+          if (
+            this.nombreProyecto.trim().length === 0 ||
+            this.descripcionProyecto.trim().length === 0 ||
+            this.responsableProyecto.trim().length === 0
+          ) {
+            this.validar = false;
+            this.mostrarError = true;
+            return;
+          }
+        
+          if (this.proyectoModificado === null) {
+            this.validar = true;
+            this.vacio = false;
+        
+            const proyecto = {
+              nombreProyecto: this.nombreProyecto,
+              responsableProyecto: this.responsableProyecto,
+              descripcionProyecto: this.descripcionProyecto,
+              estado: 'En progreso'
+            };
+        
+            const proyectosGuardados = localStorage.getItem('proyectos');
+            let listaProyectos = [];
+        
+            if (proyectosGuardados) {
+              listaProyectos = JSON.parse(proyectosGuardados);
+            }
+        
+            listaProyectos.push(proyecto);
+        
+            localStorage.setItem('proyectos', JSON.stringify(listaProyectos));
+        
+            this.listaProyectos = listaProyectos;
+        
+            this.nombreProyecto = '';
+            this.responsableProyecto = '';
+            this.descripcionProyecto = '';
+          } else {
+            this.listaProyectos[this.proyectoModificado].nombreProyecto = this.nombreProyecto;
+            this.listaProyectos[this.proyectoModificado].responsableProyecto = this.responsableProyecto;
+            this.listaProyectos[this.proyectoModificado].descripcionProyecto = this.descripcionProyecto;
+            this.proyectoModificado = null;
+        
+            localStorage.setItem('proyectos', JSON.stringify(this.listaProyectos));
+        
+            this.nombreProyecto = '';
+            this.responsableProyecto = '';
+            this.descripcionProyecto = '';
+          }
+        },
+        
+        eliminar: function(index) {
+          this.listaProyectos.splice(index, 1);
+        
+          localStorage.setItem('proyectos', JSON.stringify(this.listaProyectos));
         },
 
-        eliminar:function(index){
+      /*  eliminar:function(index){
             this.listaProyectos.splice(index,1)
-        },
+        },*/
 
-         // Actualizar proyectos en el localStorage
-      localStorage.setItem('proyectos', JSON.stringify(this.listaProyectos));
     
 
         editar:function(index){
