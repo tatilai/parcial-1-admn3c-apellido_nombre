@@ -2,9 +2,7 @@ Vue.component('componente-formcontacto',{
     data:function(){
 
         return{
-            data() {
-                return {
-                  equipos: [
+           quipos: [
                     {
                       nombre: '',
                       miembros: [
@@ -15,8 +13,8 @@ Vue.component('componente-formcontacto',{
                       ]
                     }
                   ]
-                }
-              }
+                
+              
         }
     },
 
