@@ -22,7 +22,11 @@ Vue.component('componente-formcontacto',{
 
 
   template:`
-`,  
+  
+
+
+
+   `,  
 
 });
 
