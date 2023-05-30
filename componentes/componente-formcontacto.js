@@ -50,7 +50,7 @@ Vue.component('componente-formcontacto',{
           <ul>
             <li v-for="(miembro, miembroIndex) in equipo.miembros" :key="miembroIndex">
               <input v-model="miembro.nombre" type="text" required>
-              <select v-model="miembro.rol" required>
+              <select  class="form-select mt-3" name="miembros" id="miembros" v-model="miembro.rol" required>
                 <option value="" disabled selected>Seleccionar Rol</option>
                 <option value="Líder">Líder</option>
                 <option value="Desarrollador">Desarrollador</option>
