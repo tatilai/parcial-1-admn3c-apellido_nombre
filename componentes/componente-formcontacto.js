@@ -35,6 +35,13 @@ Vue.component('componente-formcontacto',{
          <input v-model="equipo.nombre" type="text" class="form-control"  id="nombre" name="nombre"  placeholder="Ingrese nombre del equipo">
           <label for="nombre" class="form-label">Nombre del Equipo:</label>         
         </div>
+        <div class="row "> 
+        <div class="col-md-6 col-lg">
+             <div class="mb-3">
+        <label for="comentarios" class="form-label text-salmon">Comentarios</label>
+        <textarea class="form-control" id="comentarios" name="comentarios" ></textarea>
+        </div>
+       </div>
         <div>
           <label for="miembros">Miembros del Equipo:</label>
           <ul>
