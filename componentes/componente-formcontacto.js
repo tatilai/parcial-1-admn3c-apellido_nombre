@@ -30,7 +30,7 @@ Vue.component('componente-formcontacto',{
     
   <form @submit.prevent="agregarEquipo" class="formulario">
  
-  <img src="img/trabajo.png" alt="gente sentada alrededor d una mesa" class="imagen-izquierda"">
+  <img src="img/trabajo.png" alt="gente sentada alrededor de una mesa" class="imagen-izquierda">
   <div class="texto-derecha"> 
      <p style="font-weight:bold">Aquí le podrás dejar un mensaje a los demás miembros del equipo,incluyendo las modificaciones que le quieras hacer al proyecto</p>
     <div v-for="(equipo, index) in equipos" :key="index">
