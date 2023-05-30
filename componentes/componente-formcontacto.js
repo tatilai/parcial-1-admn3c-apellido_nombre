@@ -31,10 +31,10 @@ Vue.component('componente-formcontacto',{
     <form @submit.prevent="agregarEquipo">
     <p>Aqui le podrás dejar un mensaje a los demas miembros del equipo,incluyendo las modificaciones que le quieras hacer al proyecto</p>
       <div v-for="(equipo, index) in equipos" :key="index">
-        <h3>Equipo {{ index + 1 }}</h3>
+        <h2>Equipo {{ index + 1 }}</h2>
         <div>
-         <input v-model="equipo.nombre" type="text" id="nombre" required>
-          <label for="nombre">Nombre del Equipo:</label>         
+         <input v-model="equipo.nombre" type="text" class="form-control"  id="nombre" name="nombre"  placeholder="Ingrese nombre del equipo">
+          <label for="nombre" class="form-label">Nombre del Equipo:</label>         
         </div>
         <div>
           <label for="miembros">Miembros del Equipo:</label>
