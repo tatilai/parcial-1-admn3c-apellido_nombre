@@ -37,3 +37,13 @@ body{
   background-color: #f9ddb8;
  
 }
+
+.imagen-izquierda{
+  float: left;
+  margin-right: 20px;
+  
+}
+
+.formulario{
+  overflow:auto;
+}
