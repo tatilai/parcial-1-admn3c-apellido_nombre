@@ -31,8 +31,8 @@ Vue.component('componente-formcontacto',{
       <div v-for="(equipo, index) in equipos" :key="index">
         <h3>Equipo {{ index + 1 }}</h3>
         <div>
-          <label for="nombre">Nombre del Equipo:</label>
-          <input v-model="equipo.nombre" type="text" id="nombre" required>
+         <input v-model="equipo.nombre" type="text" id="nombre" required>
+          <label for="nombre">Nombre del Equipo:</label>         
         </div>
         <div>
           <label for="miembros">Miembros del Equipo:</label>
