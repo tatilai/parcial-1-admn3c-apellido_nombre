@@ -2,7 +2,7 @@ Vue.component('componente-formcontacto',{
     data:function(){
 
         return{
-           quipos: [
+           equipos: [
                     {
                       nombre: '',
                       mensaje:'',
@@ -62,6 +62,9 @@ Vue.component('componente-formcontacto',{
 
 
    methods:{
+
+
+
 
    }
 
