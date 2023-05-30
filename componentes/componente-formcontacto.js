@@ -26,8 +26,10 @@ Vue.component('componente-formcontacto',{
 
 
   <div class="d-flex justify-content-center">
-    <h1>Formulario de Equipos de Trabajo</h1>
+  
+     <h1>Contacto</h1>   
     <form @submit.prevent="agregarEquipo">
+    <p>Aqui le podrás dejar un mensaje a los demas miembros del equipo,incluyendo las modificaciones que le quieras hacer al proyecto</p>
       <div v-for="(equipo, index) in equipos" :key="index">
         <h3>Equipo {{ index + 1 }}</h3>
         <div>
