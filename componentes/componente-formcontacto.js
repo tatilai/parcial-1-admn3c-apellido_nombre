@@ -43,7 +43,10 @@ Vue.component('componente-formcontacto',{
         </div>
        </div>
         <div>
-          <label for="miembros">Miembros del Equipo:</label>
+        <div class="row"> 
+        <div class="col-md"> 
+        <div class="mb-3"> 
+         <label for="miembros"  class="form-label" style="font-weight:bold">Miembros del Equipo:</label>
           <ul>
             <li v-for="(miembro, miembroIndex) in equipo.miembros" :key="miembroIndex">
               <input v-model="miembro.nombre" type="text" required>
@@ -54,6 +57,10 @@ Vue.component('componente-formcontacto',{
                 <option value="Diseñador">Diseñador</option>
                 <option value="Tester">Tester</option>
               </select>
+              </div>      
+              </div>        
+              </div>
+          
               <button type="button" @click="eliminarMiembro(index, miembroIndex)">Eliminar</button>
             </li>
           </ul>
