@@ -44,6 +44,12 @@ body{
   
 }
 
+.texto-derecha {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .formulario{
   overflow:auto;
 }
