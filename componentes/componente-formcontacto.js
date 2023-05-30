@@ -25,7 +25,7 @@ Vue.component('componente-formcontacto',{
   
 
 
-  <div class=" bg-claro p-4 mt-4 w-50 mx-auto d-flex justify-content-center">
+  <div id="estructura" class="bg-claro p-4 mt-4 w-50 mx-auto d-flex justify-content-center">
 
     
   <form @submit.prevent="agregarEquipo" class="formulario">
