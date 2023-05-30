@@ -32,3 +32,7 @@ body{
   font-weight: bold;
   margin-left: 5px;
 }
+
+.bg-claro{
+  background-color: #f9ddb8;
+}
