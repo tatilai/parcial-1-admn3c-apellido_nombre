@@ -25,8 +25,7 @@ Vue.component('componente-formcontacto',{
   
 
 
-  <template>
-  <div>
+  <div class="d-flex justify-content-center">
     <h1>Formulario de Equipos de Trabajo</h1>
     <form @submit.prevent="agregarEquipo">
       <div v-for="(equipo, index) in equipos" :key="index">
@@ -56,7 +55,7 @@ Vue.component('componente-formcontacto',{
       <button type="submit">Guardar Equipos</button>
     </form>
   </div>
-</template>
+
 
 
    `,  
