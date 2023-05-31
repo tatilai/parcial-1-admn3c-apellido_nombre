@@ -27,6 +27,7 @@ Vue.component('componente-formcontacto',{
 
   template:`
   
+  <div>
   <div class="container border bg-claro">
     
   <section class="row justify-content-center" id="contacto">
@@ -164,7 +165,9 @@ Vue.component('componente-formcontacto',{
         
     </div>     
          
-  </div>     
+  </div>  
+ </div>
+   
          
   `,  
       
@@ -213,10 +216,10 @@ Vue.component('componente-formcontacto',{
 
         }
 
-      let telefonoValido= pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}";
+     /* let telefonoValido= pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}";
       if(!telefonoValido.test(this.contacto.telefono)){
         this.errores.push('Debe ingresar un formato valido')
-      }  
+      }  */
 
 
       if(this.contacto.comentario&& this.contacto.comentario.length<15){
