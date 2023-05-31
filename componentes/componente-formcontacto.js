@@ -230,6 +230,32 @@ Vue.component('componente-formcontacto',{
       }
 
 
+      console.log(this.errores)
+
+      if(this.errores.length==0){
+        objeoLocal={
+          comentario:this.contacto.comentario,
+          nombre:this.contacto.nombre,
+          email:this.contacto.mail,
+          telefono:this.contacto.telefono
+        }
+        if(!localStorage.dato){
+          this.arr=[]
+        }else{
+          this.arr=JSON.parse(localStorage.getItem("datoComentario"))
+
+          console.log(this.arr)
+
+        }
+
+            this.arr.push(objetoLocal)
+            localStorage.setItem("datoComentario",JSON.stringify(this.arr))
+
+            
+            console.log(this.arr)
+      }
+
+
 
 
     }
