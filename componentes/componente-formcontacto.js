@@ -213,6 +213,22 @@ Vue.component('componente-formcontacto',{
 
         }
 
+      let telefonoValido= pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}";
+      if(!telefonoValido.test(this.contacto.telefono)){
+        this.errores.push('Debe ingresar un formato valido')
+      }  
+
+
+      if(this.contacto.comentario&& this.contacto.comentario.length<15){
+        this.errores.push('El comentario tiene que tener mas de 15 caracteres');
+      }
+
+      if (!this.contacto.confirmacion) {
+
+        this.errores.push('Debes confirmar que los datos son correctos')
+          
+      }
+
 
 
 
