@@ -142,7 +142,7 @@ Vue.component('componente-formcontacto',{
       <div v-if="enviado===true">
         <div v-if="cantidadErrores" :class="muestraError">
           <ul>
-             <li v-for="i in errores">{{x}} </li>        
+             <li v-for="i in errores">{{errores}} </li>        
            </ul>        
         </div>
        <div v-else class="my-5 text-center">
