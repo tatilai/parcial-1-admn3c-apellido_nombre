@@ -31,7 +31,7 @@ Vue.component('componente-formcontacto',{
     
   <section class="row justify-content-center" id="contacto">
           <div class=" col-12 text-center mt-3">
-              <h1></h1> 
+              <h1>Equipos</h1> 
           </div>
         
 
@@ -136,11 +136,53 @@ Vue.component('componente-formcontacto',{
                   
 </div>
 
-<
+   <div>
+      <div v-if="enviado===true">
+        <div v-if="cantidadErrores" :class="muestraError">
+          <ul>
+             <li v-for="i in errores">{{x}} </li>        
+           </ul>        
+        </div>
+       <div v-else class"my-5 text-center">
+            <span class"alert alert-succes" role="alert">Enviado con éxito</span>
+         </div>
+    </div>
 
 
-   `,  
+    <div v-if="this.arr.lenght >0" class="mt-5 card w-50 mx-auto p-2 mb-2 text-dark">
 
+      <h2>Info del formulario enviado</h2>
+       <ul class="text-dark" v-for="item in arr">
+
+         <li> nombre del equipo:{{item.nombre}} </li>
+         <li> mail:{{item.mail}}</li>    
+         <li> telefono:{{item.telefono}}</li> 
+         <li>rol:{{item.rol}} </li>
+         <li>comentario:{{item.comentario}}</li>
+        
+       </ul>  
+        
+    </div>     
+         
+  </div>     
+         
+  `,  
+      
+
+     
+    
+    
+    
+    
+    
+    
+
+
+
+    
+
+
+   
 
    methods:{
 
