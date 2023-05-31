@@ -50,7 +50,7 @@ Vue.component('componente-formcontacto',{
       <div class="row g-2">
           <div class="col-md">
               <div class="form-floating mb-3 ">
-                  <input type="text" class="form-control" id="nombre" name="nombre"
+                  <input type="text" class="form-control" v-model.lazy="contacto" id="nombre" name="nombre"
                       placeholder="Ingrese nombre del equipo">
                   <label for="nombre" class="form-label text-lavanda">Ingrese nombre del equipo</label>
               </div>
@@ -97,15 +97,14 @@ Vue.component('componente-formcontacto',{
               <div class="row">
                   <div class="col-md">
                       <div class="mb-3">
-                    <label for="fav" class="form-label text-lavanda" style="font-weight:bold">Para recibir asesoramiento por el producto indicado para tu piel</label>
+                    <label for="fav" class="form-label text-lavanda" style="font-weight:bold">Indique qué rol desempeña en el equipo</label>
                <select class="form-select" name="fav" id="fav" required>
-                 <option value="" selected disabled>Indicanos qué tipo de piel tenés </option>
-                 <option value="1"> Piel normal</option>
-                 <option value="2"> Piel mixta</option>
-                 <option value="3"> Piel oleosa</option>
-                 <option value="4"> Piel seca</option>
-                 <option value="5">Piel sensible </option>
-               </select>
+                 <option value="" selected disabled>Rol: </option>
+                 <option value="Lider">Lider</option>
+                 <option value="desarrollador">Desarrollador</option>
+                 <option value="diseñador">Diseñador</option>
+                 <option value="tester"> Tester</option>
+                 </select>
                </div>
                   </div>
                </div>
@@ -122,8 +121,8 @@ Vue.component('componente-formcontacto',{
 
        <div class="col-md-6 col-lg">   
           <div class="mb-3 form-check">
-              <input type="radio" class="form-check-input" id="newsletter">
-              <label class="form-check-label text-celeste" for="newsletter">Suscribirse al Newsletter</label>
+              <input type="checkbox" class="form-check-input" v-model="contacto.conformacion" :value="false" id="invalidCheck"required>
+              <label class="form-check-label text-celeste" for="newsletter">Confirmo que los datos son correctos</label>
           </div>
        </div>
          
