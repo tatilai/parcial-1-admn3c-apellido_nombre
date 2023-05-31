@@ -36,11 +36,12 @@ Vue.component('componente-formcontacto',{
           </div>
         
 
-          <div class="row g-2">
-          <div class="col-lg-4">
-            <img src="img/trabajo.png" alt="equipo de trabajo" class="img-fluid">
-          </div>        
-         
+         <div class="row g-2">
+            <div class="col-lg-4">
+               <img src="img/trabajo.png" alt="equipo de trabajo" class="img-fluid">
+           </div>        
+         </div>
+
        <div class="col-lg-8 p-3"> 
 
           <form @submit.prevent="guardar" novalidate>    
@@ -113,8 +114,8 @@ Vue.component('componente-formcontacto',{
 
        <div class="col-md-6 col-lg">   
           <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" v-model="contacto.conformacion" :value="false" id="invalidCheck"required>
-              <label class="form-check-label text-celeste" for="newsletter">Confirmo que los datos son correctos</label>
+              <input type="checkbox" class="form-check-input" v-model="contacto.conformacion" :value="false" id="invalidCheck"required >
+              <label class="form-check-label" for="newsletter">Confirmo que los datos son correctos</label>
           </div>
        </div>
          
@@ -144,16 +145,16 @@ Vue.component('componente-formcontacto',{
              <li v-for="i in errores">{{x}} </li>        
            </ul>        
         </div>
-       <div v-else class"my-5 text-center">
-            <span class"alert alert-succes" role="alert">Enviado con éxito</span>
+       <div v-else class="my-5 text-center">
+            <span class="alert alert-succes" role="alert">Enviado con éxito</span>
          </div>
-    </div>
+      </div>
 
 
-    <div v-if="this.arr.lenght >0" class="mt-5 card w-50 mx-auto p-2 mb-2 text-dark">
+      <div  v-if="this.arr.length > 0" class="mt-5 card w-50 mx-auto p-2 mb-2 text-dark">
 
-      <h2>Info del formulario enviado</h2>
-       <ul class="text-dark" v-for="item in arr">
+         <h2>Info del formulario enviado</h2>
+         <ul class="text-dark" v-for="item in arr">
 
          <li> nombre del equipo:{{item.nombre}} </li>
          <li> mail:{{item.mail}}</li>    
@@ -161,13 +162,12 @@ Vue.component('componente-formcontacto',{
          <li>rol:{{item.rol}} </li>
          <li>comentario:{{item.comentario}}</li>
         
-       </ul>  
+        </ul>  
         
-    </div>     
-         
-  </div>  
+      </div>  
+  </div>        
+  
  </div>
-   
          
   `,  
       
