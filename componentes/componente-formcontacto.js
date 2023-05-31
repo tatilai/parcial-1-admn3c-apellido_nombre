@@ -186,6 +186,25 @@ Vue.component('componente-formcontacto',{
 
    methods:{
 
+    guardar:function(){
+     
+      this.enviado=true;  //queremos evaluar que los mensajes se muestren solo cuando se ejecute la funcion
+      this.errores=[]  //vaciamos el array de errores
+
+      if(!this.contacto.nombre){
+
+       console.log(!this.contacto.nombre)
+       this.errores.push('El nombe del equipo es obligatorio');
+
+      }
+      if(this.contacto.nombre && this.contacto.nombre.length < 5) {
+        this.errores.push('NOMBRE: Debe tener más de 5 caracteres.');
+         
+      }
+
+
+
+    }
 
 
 
