@@ -23,74 +23,126 @@ Vue.component('componente-formcontacto',{
 
   template:`
   
+  <div class="container border bg-claro">
+    
+  <section class="row justify-content-center" id="contacto">
+          <div class=" col-12 text-center mt-3">
+              <h1>Contacto</h1> 
+          </div>
+        
 
-  <div class="form-body bg-light text-dark p-4 mt-4 w-50 mx-auto" id="equipoForm">
-  <div class="row">
-    <div class="form-holder">
-      <div class="form-content">
-        <div class="form-items">
-          <h3>Equipo</h3>
-          <p class="fw-bold">Aquí puedes dejar un mensaje al equipo y seleccionar el rol</p>
-          <form @submit.prevent="guardarEquipo" novalidate>
-            <div class="col-md-12 mb-3">
-              <label for="nombre" class="form-label">Nombre del Equipo:</label>
-              <input class="form-control my-1" v-model.lazy="equipo.nombre" type="text" name="nombre" placeholder="Ingrese nombre del equipo" required>
-              <div class="invalid-feedback" v-if="errors.nombre">{{ errors.nombre }}</div>
-            </div>
-            <div class="col-md-12 mb-3">
-              <label for="comentarios" class="form-label">Comentarios:</label>
-              <textarea class="form-control" rows="3" v-model="equipo.comentarios" name="comentarios" required></textarea>
-              <div class="invalid-feedback" v-if="errors.comentarios">{{ errors.comentarios }}</div>
-            </div>
-            <div class="col-md-12 mb-3">
-              <label for="rol" class="form-label">Rol:</label>
-              <select class="form-select mt-3" v-model="equipo.rol" required>
-                <option disabled value="">Seleccionar Rol</option>
-                <option value="Líder">Líder</option>
-                <option value="Desarrollador">Desarrollador</option>
-                <option value="Diseñador">Diseñador</option>
-                <option value="Tester">Tester</option>
-              </select>
-              <div class="invalid-feedback" v-if="errors.rol">{{ errors.rol }}</div>
-            </div>
-            <div class="form-button mt-3">
-              <button id="submit" type="submit" class="btn btn-primary">Guardar Equipo</button>
-            </div>
-          </form>
-        </div>
+          <div class="row g-2">
+          <div class="col-lg-4">
+            <img src="img/trabajo.png" alt="equipo de trabajo" class="img-fluid">
+          </div>        
+         
+       <div class="col-lg-8 p-3"> 
+
+          <form action="informacion/procesar_datos_get.php" method="GET">    
+         
+               <p style="font-weight:bold" > Si querés recibir más información acerca de nuestros productos dejanos tus datos y a la brevedad nos pondremos en contacto</p>
+      
+                     
+      <div class="row g-2">
+          <div class="col-md">
+              <div class="form-floating mb-3 ">
+                  <input type="text" class="form-control" id="nombre" name="nombre"
+                      placeholder="Ingrese su nombre">
+                  <label for="nombre" class="form-label text-lavanda">Ingrese su Nombre</label>
+              </div>
+          </div>
+
+          <div class="col-md">
+              <div class="form-floating mb-3">
+                  <input type="text" class="form-control" id="apellido" name="apellido"
+                      placeholder="Ingrese su apellido">
+                  <label for="apellido" class="form-label text-lavanda">Ingrese su apellido</label>
+              </div>
+          </div>
+
       </div>
-    </div>
-     </div>
-     <div>
-    <div v-if="enviado === true">
-      <div v-if="Object.keys(errors).length > 0" class="my-5 text-center">
-        <ul>
-          <li v-for="(error, key) in errors" :key="key">{{ error }}</li>
-        </ul>
-      </div>
-      <div v-else class="my-5 text-center">
-        <span class="alert alert-success" role="alert">Equipo guardado con éxito</span>
-      </div>
-    </div>
-    <div v-if="equipos.length > 0" class="mt-5 card w-50 mx-auto p-2 mb-2 text-dark">
-      <h2>Equipos Guardados</h2>
-      <ul v-for="equipo in equipos" :key="equipo.id" class="text-dark">
-        <li>
-          Nombre del Equipo: {{ equipo.nombre }}
-        </li>
-        <li>
-          Comentarios: {{ equipo.comentarios }}
-        </li>
-        <li>
-          Rol: {{ equipo.rol }}
-        </li>
-      </ul>
-    </div>
-
-   </div> 
 
 
-  </div>
+
+
+
+           <div class="row g-2">
+
+
+              <div class="col-md-6 col-lg"> 
+                 <div class="form-floating mb-3">
+                 
+              <input type="text" class="form-control" id="tel" name="tel" placeholder="ingrese su teléfono"/> 
+             <label for="tel" class ="form-label text-lavanda">Ingrese su teléfono</label>
+   
+                 </div>
+
+             </div>
+
+              <div class="col-md-6 col-lg">
+                  <div class="mb-3">
+                      <input type="email" class="form-control" id="email" name="email"
+                          placeholder="Ingrese su email">
+                      <div  class="form-text">Recuerde incluir una @ y el dominio.</div>
+                  </div>
+              </div>          
+         </div>
+
+         
+  
+              <div class="row">
+                  <div class="col-md">
+                      <div class="mb-3">
+                    <label for="fav" class="form-label text-lavanda" style="font-weight:bold">Para recibir asesoramiento por el producto indicado para tu piel</label>
+               <select class="form-select" name="fav" id="fav" required>
+                 <option value="" selected disabled>Indicanos qué tipo de piel tenés </option>
+                 <option value="1"> Piel normal</option>
+                 <option value="2"> Piel mixta</option>
+                 <option value="3"> Piel oleosa</option>
+                 <option value="4"> Piel seca</option>
+                 <option value="5">Piel sensible </option>
+               </select>
+               </div>
+                  </div>
+               </div>
+        
+              
+                 <div class="row "> 
+                  <div class="col-md-6 col-lg">
+                       <div class="mb-3">
+                  <label for="comentarios" class="form-label text-salmon">Comentarios</label>
+                  <textarea class="form-control" id="comentarios" name="comentarios" ></textarea>
+              </div>
+          </div>
+
+
+       <div class="col-md-6 col-lg">   
+          <div class="mb-3 form-check">
+              <input type="radio" class="form-check-input" id="newsletter">
+              <label class="form-check-label text-celeste" for="newsletter">Suscribirse al Newsletter</label>
+          </div>
+       </div>
+         
+              
+               </div>
+      
+              <button type="submit" class="btn btn-amarillo d-block ms-auto text-negro">Enviar</button>
+              
+      
+                
+             
+  
+  
+           </form>
+          </div>
+
+      </section>
+           
+
+
+                  
+</div>
+
 
    `,  
 
