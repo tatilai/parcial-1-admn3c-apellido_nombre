@@ -4,8 +4,8 @@ Vue.component('componente-formcontacto',{
         return{
            contacto: {
             nombre:"",
-            mensaje:"",
-            equipo:"",
+            mail:"",
+            telefono:"",
             rol:[
               'Lider',
               'Desarrollador',
@@ -48,21 +48,15 @@ Vue.component('componente-formcontacto',{
       
                      
       <div class="row g-2">
-          <div class="col-md">
+          <div class="col-lg">
               <div class="form-floating mb-3 ">
-                  <input type="text" class="form-control" v-model.lazy="contacto" id="nombre" name="nombre"
+                  <input type="text" class="form-control" v-model.lazy="contacto.nombre" id="nombre" name="nombre"
                       placeholder="Ingrese nombre del equipo">
-                  <label for="nombre" class="form-label text-lavanda">Ingrese nombre del equipo</label>
+                  <label for="nombre" class="form-label">Ingrese nombre del equipo</label>
               </div>
           </div>
 
-          <div class="col-md">
-              <div class="form-floating mb-3">
-                  <input type="text" class="form-control" id="apellido" name="apellido"
-                      placeholder="Ingrese su apellido">
-                  <label for="apellido" class="form-label text-lavanda">Ingrese su apellido</label>
-              </div>
-          </div>
+         
 
       </div>
 
@@ -76,7 +70,7 @@ Vue.component('componente-formcontacto',{
               <div class="col-md-6 col-lg"> 
                  <div class="form-floating mb-3">
                  
-              <input type="text" class="form-control" id="tel" name="tel" placeholder="ingrese su teléfono"/> 
+              <input type="text" class="form-control" id="tel" name="tel" v-model="contacto.telefono" placeholder="ingrese su teléfono"/> 
              <label for="tel" class ="form-label text-lavanda">Ingrese su teléfono</label>
    
                  </div>
@@ -85,9 +79,9 @@ Vue.component('componente-formcontacto',{
 
               <div class="col-md-6 col-lg">
                   <div class="mb-3">
-                      <input type="email" class="form-control" id="email" name="email"
+                      <input type="email"  v-model="contacto.mail"  class="form-control" id="email" name="email"
                           placeholder="Ingrese su email">
-                      <div  class="form-text">Recuerde incluir una @ y el dominio.</div>
+                      <div  class="form-text" required>Recuerde incluir una @ y el dominio.</div>
                   </div>
               </div>          
          </div>
@@ -97,14 +91,11 @@ Vue.component('componente-formcontacto',{
               <div class="row">
                   <div class="col-md">
                       <div class="mb-3">
-                    <label for="fav" class="form-label text-lavanda" style="font-weight:bold">Indique qué rol desempeña en el equipo</label>
-               <select class="form-select" name="fav" id="fav" required>
-                 <option value="" selected disabled>Rol: </option>
-                 <option value="Lider">Lider</option>
-                 <option value="desarrollador">Desarrollador</option>
-                 <option value="diseñador">Diseñador</option>
-                 <option value="tester"> Tester</option>
-                 </select>
+                    <label for="fav" class="form-label" style="font-weight:bold">Indique qué rol desempeña en el equipo</label>
+               <select class="form-select" v-model="contacto.  rol" name="fav" id="fav" required>
+                 <option v-for="item in contacto.rol" v-bind:value="item">{{item}} 
+                 </option>              
+               </select>
                </div>
                   </div>
                </div>
@@ -113,8 +104,8 @@ Vue.component('componente-formcontacto',{
                  <div class="row "> 
                   <div class="col-md-6 col-lg">
                        <div class="mb-3">
-                  <label for="comentarios" class="form-label text-salmon">Comentarios</label>
-                  <textarea class="form-control" id="comentarios" name="comentarios" ></textarea>
+                  <label for="comentarios" class="form-label ">Comentarios</label>
+                  <textarea class="form-control" id="comentarios" v-model="contacto.comentario" name="comentarios" ></textarea>
               </div>
           </div>
 
@@ -129,7 +120,7 @@ Vue.component('componente-formcontacto',{
               
                </div>
       
-              <button type="submit" class="btn btn-amarillo d-block ms-auto text-negro">Enviar</button>
+              <button type="submit" class="btn btn-primary d-block ms-auto">Enviar</button>
               
       
                 
@@ -139,12 +130,13 @@ Vue.component('componente-formcontacto',{
            </form>
           </div>
 
-      </section>
-           
+      </section>      
 
 
                   
 </div>
+
+<
 
 
    `,  
