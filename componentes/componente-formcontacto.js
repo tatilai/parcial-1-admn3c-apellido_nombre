@@ -201,6 +201,18 @@ Vue.component('componente-formcontacto',{
         this.errores.push('NOMBRE: Debe tener más de 5 caracteres.');
          
       }
+      if(!this.contacto.comentario){
+        this.errores.push('COMENTARIO:debe escribir su comentario');
+      }
+
+      let emailValido= /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+
+      if( !emailValido.test(this.contacto.mail) ){
+        
+        this.errores.push('EMAIL: no se corresponde con un valor válido. Ejemplo: xxxxx@xxxx.xxx')
+
+        }
+
 
 
 
