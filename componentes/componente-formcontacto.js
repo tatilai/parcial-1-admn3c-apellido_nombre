@@ -27,7 +27,7 @@ Vue.component('componente-formcontacto',{
     
   <section class="row justify-content-center" id="contacto">
           <div class=" col-12 text-center mt-3">
-              <h1>Contacto</h1> 
+              <h1></h1> 
           </div>
         
 
@@ -40,7 +40,7 @@ Vue.component('componente-formcontacto',{
 
           <form action="informacion/procesar_datos_get.php" method="GET">    
          
-               <p style="font-weight:bold" > Si querés recibir más información acerca de nuestros productos dejanos tus datos y a la brevedad nos pondremos en contacto</p>
+               <p style="font-weight:bold" >Aqui tienes el espacio para dejar un mensaje a los miembros de tu equipo sobre lo que te parecio el proyecto y si le deseas hacer cambios</p>
       
                      
       <div class="row g-2">
