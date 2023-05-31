@@ -2,21 +2,25 @@ Vue.component('componente-formcontacto',{
     data:function(){
 
         return{
-           equipo: [
-                    {
-                      nombre: '',
-                      mensaje:'',
-                      miembros: [
-                        {
-                          nombre: '',
-                          rol: ''
-                        }
-                      ]
-                    }
-                  ]
+           contacto: {
+            nombre:"",
+            mensaje:"",
+            equipo:"",
+            rol:[
+              'Lider',
+              'Desarrollador',
+              'Diseñador',
+              'Tester'
+            ],
+            confirmacion:null
+           },
+           errores:[],
+           arr:[],
+           enviado:false,
+           muestraError:"alert alert-danger m-5 p-5"            
                 
               
-        }
+        };
     },
 
 
@@ -38,7 +42,7 @@ Vue.component('componente-formcontacto',{
          
        <div class="col-lg-8 p-3"> 
 
-          <form action="informacion/procesar_datos_get.php" method="GET">    
+          <form @submit.prevent="guardar" novalidate>    
          
                <p style="font-weight:bold" >Aqui tienes el espacio para dejar un mensaje a los miembros de tu equipo sobre lo que te parecio el proyecto y si le deseas hacer cambios</p>
       
@@ -47,8 +51,8 @@ Vue.component('componente-formcontacto',{
           <div class="col-md">
               <div class="form-floating mb-3 ">
                   <input type="text" class="form-control" id="nombre" name="nombre"
-                      placeholder="Ingrese su nombre">
-                  <label for="nombre" class="form-label text-lavanda">Ingrese su Nombre</label>
+                      placeholder="Ingrese nombre del equipo">
+                  <label for="nombre" class="form-label text-lavanda">Ingrese nombre del equipo</label>
               </div>
           </div>
 
