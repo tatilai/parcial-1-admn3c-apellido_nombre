@@ -58,5 +58,5 @@ body{
 
 #estructura{
   max-height: 100vh;
-  overflow: auto;
+ max-width: 100%;
 }
