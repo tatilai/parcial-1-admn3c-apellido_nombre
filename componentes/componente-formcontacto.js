@@ -255,14 +255,25 @@ Vue.component('componente-formcontacto',{
             console.log(this.arr)
       }
 
-
-
-
     }
 
 
 
-   }
+   },
+
+   mounted:function(){
+    this.arr=JSON.parse(localStorage.getItem("datoComentario"))||[]
+    console.log*this.arr
+   },
+
+
+   computed: {
+
+    cantidadErrores: function(){
+        return this.errores.length; // Devuelve cantidad errores 
+    }
+
+},
 
 });
 
