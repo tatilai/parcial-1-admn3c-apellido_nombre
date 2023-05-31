@@ -212,7 +212,7 @@ Vue.component('componente-formcontacto',{
 
       if( !emailValido.test(this.contacto.mail) ){
         
-        this.errores.push('EMAIL: no se corresponde con un valor válido. Ejemplo: xxxxx@xxxx.xxx')
+        this.errores.push('EMAIL: no se corresponde con un valor válido.')
 
         }
 
