@@ -6,17 +6,16 @@ Vue.component('componente-formcontacto',{
             nombre:"",
             mail:"",
             telefono:"",
-            rolSeleccionado:"",
+            rolSeleccionado:"",                     
+            confirmacion:null        
+                     
+           },
             roles:[
               'Lider',
               'Desarrollador',
               'Diseñador',
               'Tester'
-            ],          
-            confirmacion:null        
-          
-            
-           },
+            ],
            errores:[],
            arr:[],
            enviado:false,
@@ -162,7 +161,6 @@ Vue.component('componente-formcontacto',{
          <li> nombre del equipo:{{item.nombre}} </li>
          <li> mail:{{item.email}}</li>    
          <li> telefono:{{item.telefono}}</li> 
-         <li>rol:{{item.rol}} </li>
          <li>comentario:{{item.comentario}}</li>
         
         </ul>  
