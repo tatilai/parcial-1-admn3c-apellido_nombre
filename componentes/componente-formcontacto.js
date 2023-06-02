@@ -4,15 +4,12 @@ Vue.component('componente-formcontacto',{
         return{
            contacto: {
             nombre:"",
-            email:"",
+            mail:"",
             telefono:"",
-            rol:[
-              'Lider',
-              'Desarrollador',
-              'Diseñador',
-              'Tester'
-            ],
-            confirmacion:null
+            rolSeleccionado:"",          
+            confirmacion:null        
+          
+            
            },
            errores:[],
            arr:[],
@@ -94,7 +91,7 @@ Vue.component('componente-formcontacto',{
                   <div class="col-md">
                       <div class="mb-3">
                     <label for="fav" class="form-label" style="font-weight:bold">Indique qué rol desempeña en el equipo</label>
-               <select class="form-select" v-model="contacto.  rol" name="fav" id="fav" required>
+               <select class="form-select" v-model="contacto.rolSeleccionado" name="fav" id="fav" required>
                  <option v-for="item in contacto.rol" v-bind:value="item">{{item}} 
                  </option>              
                </select>
@@ -156,9 +153,9 @@ Vue.component('componente-formcontacto',{
          <h2>Info del formulario enviado</h2>
          <ul class="text-dark" v-for="item in arr">
 
-         <li>nombre del equipo:{{item.nombre}} </li>
-         <li>mail:{{item.email}}</li>    
-         <li>telefono:{{item.telefono}}</li> 
+         <li> nombre del equipo:{{item.nombre}} </li>
+         <li> mail:{{item.email}}</li>    
+         <li> telefono:{{item.telefono}}</li> 
          <li>rol:{{item.rol}} </li>
          <li>comentario:{{item.comentario}}</li>
         
@@ -216,10 +213,10 @@ Vue.component('componente-formcontacto',{
 
         }
 
-     /* let telefonoValido= pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}";
+      let telefonoValido= pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}";
       if(!telefonoValido.test(this.contacto.telefono)){
         this.errores.push('Debe ingresar un formato valido')
-      }  */
+      }  
 
 
       if(this.contacto.comentario&& this.contacto.comentario.length<15){
@@ -241,13 +238,16 @@ Vue.component('componente-formcontacto',{
           comentario:this.contacto.comentario,
           nombre:this.contacto.nombre,
           email:this.contacto.mail,
-          telefono:this.contacto.telefono
-        } 
+          telefono:this.contacto.telefono,
+          rol: this.contacto.rolSeleccionado 
+        }
         if(!localStorage.dato){
           this.arr=[]
         }else{
           this.enviado=false;
-          this.arr=JSON.parse(localStorage.getItem("datoComentario"))       
+          this.arr=JSON.parse(localStorage.getItem("datoComentario"))
+
+        
 
         }
 
@@ -255,7 +255,7 @@ Vue.component('componente-formcontacto',{
             localStorage.setItem("datoComentario",JSON.stringify(this.arr))
 
             
-           
+            
       }
 
     }
