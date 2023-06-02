@@ -114,7 +114,7 @@ Vue.component('componente-formcontacto',{
 
        <div class="col-md-6 col-lg">   
           <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" v-model="contacto.conformacion" :value="false" id="invalidCheck"required >
+              <input type="checkbox" class="form-check-input" v-model="contacto.confirmacion" :value="false" id="invalidCheck"required >
               <label class="form-check-label" for="newsletter">Confirmo que los datos son correctos</label>
           </div>
        </div>
@@ -142,7 +142,7 @@ Vue.component('componente-formcontacto',{
       <div v-if="enviado===true">
         <div v-if="cantidadErrores" :class="muestraError">
           <ul>
-             <li v-for="i in errores">{{errores}} </li>        
+             <li v-for="error in errores">{{errores}} </li>        
            </ul>        
         </div>
        <div v-else class="my-5 text-center">
