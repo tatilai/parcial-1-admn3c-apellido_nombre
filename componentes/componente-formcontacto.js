@@ -36,11 +36,11 @@ Vue.component('componente-formcontacto',{
           </div>
         
 
-         <div class="row g-2">
+         
             <div class="col-lg-4">
                <img src="img/trabajo.png" alt="equipo de trabajo" class="img-fluid">
            </div>        
-         </div>
+         
 
        <div class="col-lg-8 p-3"> 
 
