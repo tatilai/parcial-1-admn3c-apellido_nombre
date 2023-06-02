@@ -6,7 +6,12 @@ Vue.component('componente-formcontacto',{
             nombre:"",
             mail:"",
             telefono:"",
-            rolSeleccionado:"",          
+            rol:[
+              'Lider',
+              'Desarrollador',
+              'Diseñador',
+              'Tester'
+            ],          
             confirmacion:null        
           
             
@@ -91,7 +96,7 @@ Vue.component('componente-formcontacto',{
                   <div class="col-md">
                       <div class="mb-3">
                     <label for="fav" class="form-label" style="font-weight:bold">Indique qué rol desempeña en el equipo</label>
-               <select class="form-select" v-model="contacto.rolSeleccionado" name="fav" id="fav" required>
+               <select class="form-select" v-model="contacto.rol" name="fav" id="fav" required>
                  <option v-for="item in contacto.rol" v-bind:value="item">{{item}} 
                  </option>              
                </select>
@@ -239,7 +244,7 @@ Vue.component('componente-formcontacto',{
           nombre:this.contacto.nombre,
           email:this.contacto.mail,
           telefono:this.contacto.telefono,
-          rol: this.contacto.rolSeleccionado 
+          rol: this.contacto.rol
         }
         if(!localStorage.dato){
           this.arr=[]
