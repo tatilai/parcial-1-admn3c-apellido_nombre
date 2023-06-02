@@ -247,7 +247,7 @@ Vue.component('componente-formcontacto',{
         }else{
           this.arr=JSON.parse(localStorage.getItem("datoComentario"))
 
-          console.log(this.arr)
+         
 
         }
 
@@ -255,7 +255,7 @@ Vue.component('componente-formcontacto',{
             localStorage.setItem("datoComentario",JSON.stringify(this.arr))
 
             
-            console.log(this.arr)
+           
       }
 
     }
