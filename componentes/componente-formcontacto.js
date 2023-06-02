@@ -6,7 +6,8 @@ Vue.component('componente-formcontacto',{
             nombre:"",
             mail:"",
             telefono:"",
-            rol:[
+            rolSeleccionado:"",
+            roles:[
               'Lider',
               'Desarrollador',
               'Diseñador',
@@ -75,7 +76,7 @@ Vue.component('componente-formcontacto',{
                  <div class="form-floating mb-3">
                  
               <input type="text" class="form-control" id="tel" name="tel" v-model="contacto.telefono" placeholder="ingrese su teléfono"/> 
-             <label for="tel" class ="form-label text-lavanda">Ingrese su teléfono</label>
+             <label for="tel" class ="form-label">Ingrese su teléfono</label>
    
                  </div>
 
@@ -96,8 +97,8 @@ Vue.component('componente-formcontacto',{
                   <div class="col-md">
                       <div class="mb-3">
                     <label for="fav" class="form-label" style="font-weight:bold">Indique qué rol desempeña en el equipo</label>
-               <select class="form-select" v-model="contacto.rol" name="fav" id="fav" required>
-                 <option v-for="item in contacto.rol" v-bind:value="item">{{item}} 
+               <select class="form-select" v-model="contacto.rolSelecionado" name="fav" id="fav" required>
+                 <option v-for="item in roles" v-bind:value="item">{{item}} 
                  </option>              
                </select>
                </div>
