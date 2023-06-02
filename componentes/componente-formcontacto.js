@@ -236,7 +236,7 @@ Vue.component('componente-formcontacto',{
       console.log(this.errores)
 
       if(this.errores.length==0){
-        objeoLocal={
+        objetoLocal={
           comentario:this.contacto.comentario,
           nombre:this.contacto.nombre,
           email:this.contacto.mail,
