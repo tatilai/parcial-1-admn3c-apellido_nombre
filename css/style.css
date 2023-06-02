@@ -60,3 +60,7 @@ body{
   max-height: 100vh;
  max-width: 100%;
 }
+
+.alert-succes{
+  background-color: #02CFAE;
+}

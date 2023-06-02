@@ -4,7 +4,7 @@ Vue.component('componente-formcontacto',{
         return{
            contacto: {
             nombre:"",
-            mail:"",
+            email:"",
             telefono:"",
             rol:[
               'Lider',
@@ -156,9 +156,9 @@ Vue.component('componente-formcontacto',{
          <h2>Info del formulario enviado</h2>
          <ul class="text-dark" v-for="item in arr">
 
-         <li> nombre del equipo:{{item.nombre}} </li>
-         <li> mail:{{item.mail}}</li>    
-         <li> telefono:{{item.telefono}}</li> 
+         <li>nombre del equipo:{{item.nombre}} </li>
+         <li>mail:{{item.email}}</li>    
+         <li>telefono:{{item.telefono}}</li> 
          <li>rol:{{item.rol}} </li>
          <li>comentario:{{item.comentario}}</li>
         
