@@ -4,7 +4,7 @@ Vue.component('componente-formcontacto',{ //AGREGAR FILTROS!!!! Y SUBIRLO A RERD
         return{
            contacto: {
             nombre:"",
-            mail:"",
+            email:"",
             telefono:"",
             rolSeleccionado:"",                     
             confirmacion:null        
@@ -96,7 +96,7 @@ Vue.component('componente-formcontacto',{ //AGREGAR FILTROS!!!! Y SUBIRLO A RERD
                   <div class="col-md">
                       <div class="mb-3">
                     <label for="fav" class="form-label" style="font-weight:bold">Indique qué rol desempeña en el equipo</label>
-               <select class="form-select" v-model="contacto.rolSelecionado" name="fav" id="fav" required>
+               <select class="form-select" v-model="contacto.rolSeleccionado" name="fav" id="fav" required>
                  <option v-for="item in roles" v-bind:value="item">{{item}} 
                  </option>              
                </select>
@@ -201,7 +201,7 @@ Vue.component('componente-formcontacto',{ //AGREGAR FILTROS!!!! Y SUBIRLO A RERD
 
         }
 
-      let telefonoValido= pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}";
+      let telefonoValido= /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
       if(!telefonoValido.test(this.contacto.telefono)){
         this.errores.push('Debe ingresar un formato valido')
       }  
@@ -225,9 +225,9 @@ Vue.component('componente-formcontacto',{ //AGREGAR FILTROS!!!! Y SUBIRLO A RERD
         objetoLocal={
           comentario:this.contacto.comentario,
           nombre:this.contacto.nombre,
-          email:this.contacto.mail,
+          email:this.contacto.email,
           telefono:this.contacto.telefono,
-          rol: this.contacto.rol
+          rol: this.contacto.rolSeleccionado
         }
         if(!localStorage.dato){
           this.arr=[]
