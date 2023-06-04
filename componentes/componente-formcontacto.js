@@ -170,25 +170,9 @@ Vue.component('componente-formcontacto',{ //AGREGAR FILTROS!!!! Y SUBIRLO A RERD
   
  </div>
          
-  `,  
-      
-
-     
+  `,     
     
-    
-    
-    
-    
-    
-
-
-
-    
-
-
-   
-
-   methods:{
+    methods:{
 
     guardar:function(){
      
@@ -198,7 +182,7 @@ Vue.component('componente-formcontacto',{ //AGREGAR FILTROS!!!! Y SUBIRLO A RERD
       if(!this.contacto.nombre){
 
        console.log(!this.contacto.nombre)
-       this.errores.push('El nombe del equipo es obligatorio');
+       this.errores.push('El nombre del equipo es obligatorio');
 
       }
       if(this.contacto.nombre && this.contacto.nombre.length < 5) {
@@ -270,7 +254,7 @@ Vue.component('componente-formcontacto',{ //AGREGAR FILTROS!!!! Y SUBIRLO A RERD
 
    mounted:function(){
     this.arr=JSON.parse(localStorage.getItem("datoComentario"))||[]
-    console.log*this.arr
+    console.log(this.arr)
    },
 
 
@@ -281,6 +265,18 @@ Vue.component('componente-formcontacto',{ //AGREGAR FILTROS!!!! Y SUBIRLO A RERD
     }
 
 },
+    
+    
+    
+
+
+
+    
+
+
+   
+
+   
 
 });
 
