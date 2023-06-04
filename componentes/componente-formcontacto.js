@@ -83,7 +83,7 @@ Vue.component('componente-formcontacto',{ //AGREGAR FILTROS!!!! Y SUBIRLO A RERD
 
               <div class="col-md-6 col-lg">
                   <div class="mb-3">
-                      <input type="email"  v-model="contacto.mail"  class="form-control" id="email" name="email"
+                      <input type="email"  v-model="contacto.email"  class="form-control" id="email" name="email"
                           placeholder="Ingrese su email">
                       <div  class="form-text" required>Recuerde incluir una @ y el dominio.</div>
                   </div>
@@ -195,15 +195,15 @@ Vue.component('componente-formcontacto',{ //AGREGAR FILTROS!!!! Y SUBIRLO A RERD
 
       let emailValido= /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
 
-      if( !emailValido.test(this.contacto.mail) ){
+      if( !emailValido.test(this.contacto.email) ){
         
         this.errores.push('EMAIL: no se corresponde con un valor válido.')
 
         }
 
-      let telefonoValido= /^[0-9]{3}-[0-9]{3}-[0-9]{4}$/;
+      let telefonoValido= /^\d{10}$/;
       if(!telefonoValido.test(this.contacto.telefono)){
-        this.errores.push('Debe ingresar un formato valido')
+        this.errores.push('Debe ingresar un formato valido por ejemplo:1565986574')
       }  
 
 
