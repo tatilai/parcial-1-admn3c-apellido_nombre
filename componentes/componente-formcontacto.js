@@ -144,7 +144,7 @@ Vue.component('componente-formcontacto',{ //AGREGAR FILTROS!!!! Y SUBIRLO A RERD
       <div v-if="enviado===true">
         <div v-if="cantidadErrores" :class="muestraError">
           <ul>
-             <li v-for="error in errores">{{errores}} </li>        
+             <li v-for="error in errores">{{error}} </li>        
            </ul>        
         </div>
        <div v-else class="my-5 text-center">
