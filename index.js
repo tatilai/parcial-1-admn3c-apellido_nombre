@@ -1,4 +1,4 @@
-const router = new VueRouter({
+/*const router = new VueRouter({
 
   routes:[
     {path:"/gestion", component: componente-gestion-proyectos},
@@ -6,15 +6,14 @@ const router = new VueRouter({
     {path:"/navbar",component:componente-navbar}
   ]
 
-});
+});*/
 
 
 
 
 
 var app = new Vue({
-    el: "#app",
-    router,
+    el: "#app",   
     data: {
       titulo:'Gestor de proyectos',
       segundoTitulo:"Formulario de contacto entre los equipos",

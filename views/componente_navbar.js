@@ -10,8 +10,8 @@ Vue.component('componente-navbar', {
         </a>
   
         <ul class="nav  col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-          <li v-for="item in links">
-          <router-link to="" class="nav-link px-2 link-dark" aria-current="page">{{item.text}}</router-link>
+          <li><a href="index.html" class="nav-link px-2 link-dark">Gestion</a></li>
+         
           </li>
           <li><a href="proyectos.html" class="nav-link px-2 link-dark">Proyectos</a></li>
         </ul>

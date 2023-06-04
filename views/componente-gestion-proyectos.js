@@ -1,20 +1,5 @@
 
 
-const router = new VueRouter({
-
-  routes:[
-    {path:"/gestion", component: componente-gestion-proyectos},
-   
-  ]
-
-});
-
-
-
-
-
-
-
 
 
 Vue.component('componente-gestion-proyectos',{
@@ -27,6 +12,7 @@ Vue.component('componente-gestion-proyectos',{
            mostrarError:false,
             validar:false,
             vacio:true,
+            filtro:'',
             categoriaFiltro:'',          
             listaProyectos:[],
             proyectoModificado: null,
@@ -102,6 +88,16 @@ Vue.component('componente-gestion-proyectos',{
        </div>         
         </div>
     </div>
+
+       <div class="col-md">
+         <div class="form-floating mb-3" > 
+            <input v-model="filtro" class="form-control me-2" type="text" id="filtro" name="filtro" placeholder="Buscar">
+            
+            </div>         
+          </div>
+      </div>
+
+
     
        <div class="row">
        <div class="col-md-6 col-lg"> 
@@ -228,6 +224,7 @@ Vue.component('componente-gestion-proyectos',{
             this.nombreProyecto = '';
             this.responsableProyecto = '';
             this.descripcionProyecto = '';
+            this.filtro='';
           } else {
             this.listaProyectos[this.proyectoModificado].nombreProyecto = this.nombreProyecto;
             this.listaProyectos[this.proyectoModificado].responsableProyecto = this.responsableProyecto;
