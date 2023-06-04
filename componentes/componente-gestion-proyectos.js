@@ -22,6 +22,28 @@ Vue.component('componente-gestion-proyectos',{
         }
     },
 
+
+    computed: {
+      proyectosFiltrados: function() {
+        if (this.filtro) {
+          const filtroMinusculas = this.filtro.toLowerCase();
+          return this.listaProyectos.filter(proyecto => {
+            const nombreProyectoMinusculas = proyecto.nombreProyecto.toLowerCase();
+            const descripcionProyectoMinusculas = proyecto.descripcionProyecto.toLowerCase();
+            const responsableProyectoMinusculas = proyecto.responsableProyecto.toLowerCase();
+            return (
+              nombreProyectoMinusculas.includes(filtroMinusculas) ||
+              descripcionProyectoMinusculas.includes(filtroMinusculas) ||
+              responsableProyectoMinusculas.includes(filtroMinusculas)
+            );
+          });
+        } else {
+          return this.listaProyectos;
+        }
+      }
+    },
+    
+
     created() {
       const proyectosGuardados = localStorage.getItem('proyectos');
       if (proyectosGuardados) {
@@ -102,7 +124,7 @@ Vue.component('componente-gestion-proyectos',{
           </template>
           <template v-else>
             <tbody>
-              <tr v-for="(proyecto,index) in listaProyectos" :key="index" :class="proyecto.estados" class="mb-3">
+              <tr v-for="(proyecto,index) in proyectosFiltrados" :key="index" :class="proyecto.estados" class="mb-3">
                 <th scope="row">{{proyecto.nombreProyecto}}</th>
                 <td>{{ proyecto.descripcionProyecto }}</td>
                  <td>{{ proyecto.responsableProyecto }}</td>
@@ -227,25 +249,7 @@ Vue.component('componente-gestion-proyectos',{
 
     },
 
-    computed: {
-      proyectosFiltrados: function() {
-        if (this.filtro) {
-          const filtroMinusculas = this.filtro.toLowerCase();
-          return this.listaProyectos.filter(proyecto => {
-            const nombreProyectoMinusculas = proyecto.nombreProyecto.toLowerCase();
-            const descripcionProyectoMinusculas = proyecto.descripcionProyecto.toLowerCase();
-            const responsableProyectoMinusculas = proyecto.responsableProyecto.toLowerCase();
-            return (
-              nombreProyectoMinusculas.includes(filtroMinusculas) ||
-              descripcionProyectoMinusculas.includes(filtroMinusculas) ||
-              responsableProyectoMinusculas.includes(filtroMinusculas)
-            );
-          });
-        } else {
-          return this.listaProyectos;
-        }
-      }
-    },
+  
   
 
 
