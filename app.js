@@ -1,3 +1,15 @@
+const router = new VueRouter({
+
+  routes:[
+    {path:"/gestion", component: componente-gestion-proyectos},
+    {path: "/proyectos", component:omponente-formcontacto}
+  ]
+
+});
+
+
+
+
 
 var app = new Vue({
     el: "#app",
