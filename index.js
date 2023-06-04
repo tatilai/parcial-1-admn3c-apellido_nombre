@@ -2,7 +2,8 @@ const router = new VueRouter({
 
   routes:[
     {path:"/gestion", component: componente-gestion-proyectos},
-    {path: "/proyectos", component:omponente-formcontacto}
+    {path: "/proyectos", component:componente-formcontacto},
+    {path:"/navbar",component:componente-navbar}
   ]
 
 });
@@ -13,6 +14,7 @@ const router = new VueRouter({
 
 var app = new Vue({
     el: "#app",
+    router,
     data: {
       titulo:'Gestor de proyectos',
       segundoTitulo:"Formulario de contacto entre los equipos",

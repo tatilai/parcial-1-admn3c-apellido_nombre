@@ -1,3 +1,22 @@
+
+
+const router = new VueRouter({
+
+  routes:[
+    {path:"/gestion", component: componente-gestion-proyectos},
+   
+  ]
+
+});
+
+
+
+
+
+
+
+
+
 Vue.component('componente-gestion-proyectos',{
 
     data:function(){
