@@ -264,7 +264,7 @@ Vue.component('componente-formcontacto',{ //AGREGAR FILTROS!!!! Y SUBIRLO A RERD
         return this.errores.length; // Devuelve cantidad errores 
     }
 
-},
+   },
     
     
     

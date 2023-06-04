@@ -8,8 +8,7 @@ Vue.component('componente-gestion-proyectos',{
            mostrarError:false,
             validar:false,
             vacio:true,
-          //  filtro:'',
-          //  proyectos:[],
+            filtro:'',          
             listaProyectos:[],
             proyectoModificado: null,
             estados:[
@@ -227,6 +226,27 @@ Vue.component('componente-gestion-proyectos',{
         }
 
     },
+
+    computed: {
+      proyectosFiltrados: function() {
+        if (this.filtro) {
+          const filtroMinusculas = this.filtro.toLowerCase();
+          return this.listaProyectos.filter(proyecto => {
+            const nombreProyectoMinusculas = proyecto.nombreProyecto.toLowerCase();
+            const descripcionProyectoMinusculas = proyecto.descripcionProyecto.toLowerCase();
+            const responsableProyectoMinusculas = proyecto.responsableProyecto.toLowerCase();
+            return (
+              nombreProyectoMinusculas.includes(filtroMinusculas) ||
+              descripcionProyectoMinusculas.includes(filtroMinusculas) ||
+              responsableProyectoMinusculas.includes(filtroMinusculas)
+            );
+          });
+        } else {
+          return this.listaProyectos;
+        }
+      }
+    },
+  
 
 
     
