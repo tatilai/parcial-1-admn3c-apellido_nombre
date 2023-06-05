@@ -1,8 +1,8 @@
 /*const router = new VueRouter({
 
   routes:[
-    {path:"/gestion", component: componente-gestion-proyectos},
-    {path: "/proyectos", component:componente-formcontacto},
+    {path:"/index.html", component: componente-gestion-proyectos},
+    {path: "/proyectos.html", component:componente-formcontacto},
     {path:"/navbar",component:componente-navbar}
   ]
 

@@ -1,3 +1,13 @@
+/*const router = new VueRouter({
+
+  routes:[
+    {path:"/index.html", component: componente-gestion-proyectos}  
+
+});*/
+
+
+
+
 
 Vue.component('componente-gestion-proyectos',{
 
@@ -6,12 +16,11 @@ Vue.component('componente-gestion-proyectos',{
             nombreProyecto:'',
             descripcionProyecto:'',
             responsableProyecto:'',
-           mostrarError:false,
+            mostrarError:false,
             validar:false,
             vacio:true,
-                      
             listaProyectos:[],
-            proyectoModificado: null,
+           proyectoModificado: null,
             estados:[
                 'En progreso',
                 'Completado',
@@ -27,14 +36,18 @@ Vue.component('componente-gestion-proyectos',{
  
 
     created() {
-      const proyectosGuardados = localStorage.getItem('proyectos');
+      if(this.listaProyectos.length===0){
+        const proyectosGuardados = localStorage.getItem('proyectos');
       if (proyectosGuardados) {
         this.listaProyectos = JSON.parse(proyectosGuardados);
         this.vacio = false;
+        }
       }
+      
     },
 
-  
+
+
                  
 
 
@@ -63,14 +76,7 @@ Vue.component('componente-gestion-proyectos',{
         </div>
     </div>
 
-       <div class="col-md">
-         <div class="form-floating mb-3" > 
-            <input v-model="filtro" class="form-control me-2" type="text" id="filtro" name="filtro" placeholder="Buscar">
-            
-            </div>         
-          </div>
-      </div>
-
+      
 
     
        <div class="row">
@@ -116,8 +122,8 @@ Vue.component('componente-gestion-proyectos',{
           </template>
           <template v-else>
             <tbody>
-              <tr v-for="(proyecto,index) in proyectosFiltrados" :key="index" :class="proyecto.estados" class="mb-3">
-                <th scope="row">{{proyecto.nombreProyecto}}</th>
+              <tr v-for="(proyecto,index) in listaProyectos" :key="index" :class="proyecto.estados" class="mb-3">
+                <th scope="row">{{proyecto.nombreProyecto | mayuscula}}</th>
                 <td>{{ proyecto.descripcionProyecto }}</td>
                  <td>{{ proyecto.responsableProyecto }}</td>
                  <td>
@@ -209,6 +215,8 @@ Vue.component('componente-gestion-proyectos',{
             this.responsableProyecto = '';
             this.descripcionProyecto = '';
           }
+
+          console.log("continuarProyecto");
         },
         
         eliminar: function(index) {
@@ -217,9 +225,7 @@ Vue.component('componente-gestion-proyectos',{
           localStorage.setItem('proyectos', JSON.stringify(this.listaProyectos));
         },
 
-      /*  eliminar:function(index){
-            this.listaProyectos.splice(index,1)
-        },*/
+      
 
     
 
@@ -240,7 +246,15 @@ Vue.component('componente-gestion-proyectos',{
 
     },
 
-    
+    filters: {
+      mayuscula: function(value) {
+        if (!value) return '',
+          value = value.toString()
+        return value.charAt(0).toUpperCase() + value.slice(1)
+      }
+    }
+
+ 
 
   
 
