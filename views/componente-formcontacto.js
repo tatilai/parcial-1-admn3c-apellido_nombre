@@ -1,4 +1,4 @@
-Vue.component('componente-formcontacto',{ //AGREGAR FILTROS!!!! Y SUBIRLO A RERDMI
+Vue.component('componente-formcontacto',{
     data:function(){
 
         return{

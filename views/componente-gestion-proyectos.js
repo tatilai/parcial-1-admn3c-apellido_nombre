@@ -1,9 +1,4 @@
-/*const router = new VueRouter({
 
-  routes:[
-    {path:"/index.html", component: componente-gestion-proyectos}  
-
-});*/
 
 
 
@@ -28,7 +23,7 @@ Vue.component('componente-gestion-proyectos',{
             ],
             colorProyecto:''
             
-            //agregar filtro de busqueda con arrays!!
+            
         }
     },
 
