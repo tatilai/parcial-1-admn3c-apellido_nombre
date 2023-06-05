@@ -1,12 +1,4 @@
-/*const router = new VueRouter({
 
-  routes:[
-    {path:"/index.html", component: componente-gestion-proyectos},
-    {path: "/proyectos.html", component:componente-formcontacto},
-    {path:"/navbar",component:componente-navbar}
-  ]
-
-});*/
 
 
 
